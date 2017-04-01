@@ -11,6 +11,7 @@ using Autofac.Integration.Mvc;
 using zzbj.bll;
 using zzbj.dal;
 using zzbj.ibll;
+using zzbj.iBll;
 using zzbj.idal;
 using zzbj.models;
 using zzbj.repository;
@@ -23,7 +24,8 @@ namespace zzbj.uis
         {
 
             var builder = new ContainerBuilder();
-            SetupResolveRules(builder);
+            //SetupResolveRules(builder);
+            InjectModule.LoadInjectModule(builder);
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
@@ -44,8 +46,7 @@ namespace zzbj.uis
                 .InstancePerDependency();
             builder.RegisterType<personBll>().As<IpersonBll>();
             builder.RegisterType<customBll>().As<IcustomBll>();
-            //builder.Register(c => new personBll((IRepository<person>)
-            //    c.Resolve(typeof(IRepository<person>))));
+            builder.RegisterType<bas_userBll>().As<Ibas_userBll>();
             //builder.Register(c => new customBll((IRepository<custom>)
             //    c.Resolve(typeof(IRepository<custom>))));
         }

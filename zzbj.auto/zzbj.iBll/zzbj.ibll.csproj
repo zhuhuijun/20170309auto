@@ -40,9 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ibas_userBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBllTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="IcustomBll.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="IpersonBll.cs" />
+    <Compile Include="Irel_menuactionsBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Irel_rolemenusBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isys_actionBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isys_menuBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isys_roleBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +73,15 @@
       <Project>{7d18b23e-0c80-4222-9326-8437baacc1c0}</Project>
       <Name>zzbj.models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IBllTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IBllTemplate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,15 +14,18 @@ namespace zzbj.uis.Controllers
     public class CustomManageController : Controller
     {
         readonly IcustomBll _bll;
+        private readonly Ibas_userBll _user;
         //构造器注入
-        public CustomManageController(IcustomBll bll)
+        public CustomManageController(IcustomBll bll,Ibas_userBll user)
         {
             _bll = bll;
+            _user = user;
         }
         // GET: CustomManage
         public ActionResult Index()
         {
             _bll.Insert(new custom());
+            _user.Insert(new bas_user());
             return View();
         }
     }
