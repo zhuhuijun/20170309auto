@@ -1,0 +1,13 @@
+<configuration>
+	<BaseConfig  username="administrator"  password="admin"  mapserver="china" routename="route"  imgdraw="assets/images/i_draw.png"  imgclear="assets/images/i_clear.png"  flashDesImg="assets/images/红-环扩散.swf"  flashTemImg="assets/images/绿-环扩散.swf" arrowimg="assets/images/arrow_red.png" resolution = "0.001">
+	</BaseConfig>
+	<WebService  url="http://yutu567/LineRoutes/LineRoute.asmx?WSDL">	
+	</WebService>
+	<ControlPointLayer url="http://yutu567/ArcGIS/rest/services/china/MapServer/19">
+		<Field name="RouteID"/>
+		<Field name="MValue"/>
+	</ControlPointLayer>
+	<RiverLayer url="http://yutu567/ArcGIS/rest/services/china/MapServer/18" id="18">
+	</RiverLayer>
+</configuration>
+

@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using zzbj.bll;
+using zzbj.core;
 using zzbj.dal;
 using zzbj.ibll;
 using zzbj.iBll;
@@ -28,6 +29,7 @@ namespace zzbj.uis
             InjectModule.LoadInjectModule(builder);
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();
+            CommonContainer.kernel = container;
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
             log4net.Config.XmlConfigurator.Configure();
@@ -46,7 +48,7 @@ namespace zzbj.uis
                 .InstancePerDependency();
             builder.RegisterType<personBll>().As<IpersonBll>();
             builder.RegisterType<customBll>().As<IcustomBll>();
-            builder.RegisterType<bas_userBll>().As<Ibas_userBll>();
+            //builder.RegisterType<bas_userBll>().As<Ibas_userBll>();
             //builder.Register(c => new customBll((IRepository<custom>)
             //    c.Resolve(typeof(IRepository<custom>))));
         }

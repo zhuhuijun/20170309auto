@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+//
+//	浙江省环境地理信息系统
+// 
+// 	中科宇图.环保事业部
+//
+////////////////////////////////////////////////////////////////////////////////
+-->
+<configuration>
+
+  <style>
+    <colors>0xCEE7F4,0x2D91CC,0x355D89,0x294867,0xCEE7F4</colors>
+    <!--文本颜色，背景颜色，鼠标移入颜色，鼠标选中颜色，标题颜色-->
+    <alpha>0.75</alpha>
+    <font>微软雅黑</font>
+    <titlefont>微软雅黑</titlefont>
+  </style>
+
+  <!-- UI elements -->
+
+  <!--头部大标题-->
+  <!--<widget left="0"  top="0"    config="widgets/elements/TitleController/TitleControllerWidget.xml" url="widgets/elements/TitleController/TitleControllerWidget.swf"/>-->
+  <!--云台控制-->
+  <widget left="20"  top="50"    config="/Content/Gis/widgets/elements/Navigation/NavigationWidget.xml" url="/Content/Gis/widgets/elements/Navigation/NavigationWidget.swf"/>
+  <!--地图切换，结合下面basemaps-->
+  <widget right="10" top="21"    config="/Content/Gis/widgets/elements/MapSwitcher/MapSwitcherWidget.xml" url="/Content/Gis/widgets/elements/MapSwitcher/MapSwitcherWidget.swf"/>
+  <!--左侧展开功能菜单-->
+  <!--<widget left="-3"   top="90" visible="false"   config="widgets/elements/LeftController/LeftControllerWidget.xml" url="widgets/elements/LeftController/LeftControllerWidget.swf"/>-->
+  <!--工具栏 widgetcontainer-->
+  <widget left="83"  top="21"    config="/Content/Gis/widgets/elements/HeaderController/HeaderControllerWidget.xml" url="/Content/Gis/widgets/elements/HeaderController/HeaderControllerWidget.swf"/>
+  <widget left="5"   bottom="1"  config="/Content/Gis/widgets/elements/Coordinate/CoordinateWidget.xml" url="/Content/Gis/widgets/elements/Coordinate/CoordinateWidget.swf"/>
+  <!--<widget right="5" bottom="5" config="widgets/elements/Legend/LegendWidget.xml" url="widgets/elements/Legend/LegendWidget.swf"/>-->
+  <!--<widget right="-2" bottom="-2" config="widgets/elements/OverviewMap/OverviewMapWidget.xml" url="widgets/elements/OverviewMap/OverviewMapWidget.swf"/>-->
+
+  <!--
+	  <widget left="10"  bottom="20"  preload="true" 
+             icon="assets/yutuImages/images/48X48环境专题图.png"
+        		wIcon="assets/yutuImages/images/48X48环境专题图.png"
+              config="widgets/proWorkBar/EnvSpecial/EnvSpecialWidget.xml" 
+              url="widgets/proWorkBar/EnvSpecial/SpecialGroup/SpecialDataGrid.swf"/> 
+              -->
+  <!-- 地图 
+     <map initialextent="122.330158227909 41.1027035212779 123.902793042883 43.1365778100462" fullextent="122.330158227909 41.1027035212779 123.902793042883 43.1365778100462" top="0" logoVisible="false">   
+      
+      <map wraparound180="false" top="0" esrilogovisible = "false"
+    		initialextent="119.48596331257718 29.902186413918926 120.680452737504 30.675035348612603" 
+    		fullextent="117.09336278916496 26.749784452478856 124.06803888945467 31.889420225072257" >
+       -->
+  <map wraparound180="false" top="0" esrilogovisible = "false"
+   initialextent="122.113757 29.868568 123.192796 30.984633"
+   fullextent="117.572853940499 39.1610024174486 120.865918277509 40.6542058904876" >
+    <basemaps top="100">
+ 
+      <layer  label="地图"  type="dynamic" visible="true" name="map"
+            url="http://Lild-PC/ArcGIS/rest/services/ZhouShanMapNew/MapServer"
+            icon="/Content/Gis/assets/yutuImages/toolBar/map.png"
+                   />
+      <layer label="专题图"  type="dynamic" visible="false" name="map2"
+                 url="http://Lild-PC/ArcGIS/rest/services/Zhoushan/MapServer"
+                 icon="/Content/Gis/assets/yutuImages/toolBar/draw.png"
+                   />
+
+      <layer label="卫星"  type="dynamic" visible="false"  alpha="1"
+     url="http://Lild-PC/ArcGIS/rest/services/satelliteMap/MapServer"
+     GeometryService="http://Lild-PC/ArcGIS/rest/services/ZhouShanMapVedio/MapServer"
+   icon="/Content/Gis/assets/yutuImages/toolBar/map.png"
+               />
+
+
+      <!--	<layer label="矢量"  type="dynamic" visible="true"  alpha="1"
+               url="http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer"
+               GeometryService="http://yutu418/ArcGIS/rest/services/Geometry/GeometryServer"
+               />
+			   ZhouShanVedioMapService
+        <layer label="卫星"  type="dynamic" visible="false"  alpha="1"
+               url="http://yutu418/ArcGIS/rest/services/syMap_ygyx/MapServer"
+               GeometryService="http://yutu418/ArcGIS/rest/services/Geometry/GeometryServer"
+               />
+               -->
+    </basemaps>
+    <operationallayers>
+
+      <!--<layer label="专题图" type="dynamic" visible="false" alpha="1" name="specialMap"
+             url="http://yutu369/ArcGIS/rest/services/zjSpecialMap/MapServer"
+        		   />-->
+
+
+      <!--
+        
+        	<layer label="教育科研" type="feature" visible="false"
+                   url="http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/45"/> 
+                   -->
+
+    </operationallayers>
+  </map>
+
+
+  <!-- 应用服务 -->
+  <webService>
+
+    <!-- 几何服务 -->
+    <service name="geometryService" url="http://192.168.5.102/ArcGIS/rest/services/ZhouShanMapServices/MapServer" />
+
+    <!-- 业务数据 -->
+
+    <service name="dataService" url="http://192.168.5.102/dbdcWebServices/Service.asmx?WSDL"/>
+
+    <!--<service name="dataService" url="http://192.168.5.104/dbdcWebServices/Service.asmx?WSDL"/>-->
+    <!--<service name="dataService" url="http://192.168.5.104/dbdcWebServices/Service.asmx?WSDL"/>-->
+
+
+  </webService>
+  <!-- 模块管理 -->
+  <widgetcontainer url="/Content/Gis/widgets/elements/WidgetContainer/WidgetContainerWidget.swf" layout="float">
+
+    <!-- 工具栏各模块 -->
+    <widget label="专题图3"  preload="open"
+              config="/Content/Gis/widgets/exInterface/SpecialTopicWidget/SpecialTopicWidget.xml"
+              url="/Content/Gis/widgets/exInterface/SpecialTopicWidget/SpecialTopicWidget.swf"/>
+
+    <widget label="查询"
+        		position="toolBar"
+        		name="search"
+        		left="80"
+        		top="120"
+        		visible="true"
+        		icon="/Content/Gis/assets/images/widgetIcon/搜索.png"
+        		 wIcon="/Content/Gis/assets/images/widgetIcon/搜索.png"
+            	config="/Content/Gis/widgets/toolBar/Search/SearchWidget.xml"
+           	    url="/Content/Gis/widgets/toolBar/Search/SearchWidget.swf" />
+
+    <widget label="测量"
+        position="toolBar"
+        right = "20" top = "100"
+            icon="/Content/Gis/assets/yutuImages/images/画线测量.png"
+            wIcon="/Content/Gis/assets/yutuImages/images/画线测量.png"
+            config="/Content/Gis/widgets/toolBar/Draw/DrawWidget.xml"
+            url="/Content/Gis/widgets/toolBar/Draw/DrawWidget.swf"
+                />
+    <!--<widget label="图层控制" 
+        		name="layerList"
+        		position="toolBar"
+        		left="60" 
+        		top="100" 
+        		visible="false"
+            	icon="assets/images/widgetIcon/图层.png"
+            	wIcon="assets/images/widgetIcon/图层.png"
+            	config="widgets/toolBar/LayerList/LayerListWidget.xml"
+            	url="widgets/toolBar/LayerList/LayerListWidget.swf"/>-->
+
+    <widget label="打印"
+        name="print"
+        position="toolBar"
+    left="150"
+    top="100"
+    visible="true"
+            icon="/Content/Gis/assets/images/widgetIcon/打印.png"
+            wIcon="/Content/Gis/assets/images/widgetIcon/打印.png"
+            config="/Content/Gis/widgets/toolBar/Print/PrintWidget.xml"
+            url="/Content/Gis/widgets/toolBar/Print/PrintWidget.swf"/>
+
+
+    <!--<widget label="空气模型" 
+        		name="airModel"
+        		position="toolBar"
+        		left = "150" 
+        		top = "100" 
+        		visible="false"
+        		icon="assets/images/widgetIcon/图层.png"
+            	wIcon="assets/images/widgetIcon/图层.png"
+            	config="widgets/toolBar/AirModel/AirModelWidget.xml"
+            	url="widgets/toolBar/AirModel/AirModelWidget.swf"/>-->
+
+
+    <!--<widget label="水模型" 
+        		name="waterModel"
+        		position="toolBar"
+    			right = "5" 
+    			top = "5"  
+    			visible="false"
+    			
+    			icon="assets/images/widgetIcon/图层.png"
+            	wIcon="assets/images/widgetIcon/图层.png"
+    			config="widgets/toolBar/WaterModel/WaterModelWidget.xml"
+    			url="widgets/toolBar/WaterModel/WaterModelWidget.swf"/>-->
+
+
+    <!--<widget label="缓冲查询" 
+        		name="bufferAnalyse"
+        		position="toolBar"
+        		left="120" 
+        		top="120"   
+        		visible="false" 
+        		icon="assets/images/widgetIcon/i_edit.png"
+            	wIcon="assets/images/widgetIcon/i_edit.png"
+        		config="widgets/toolBar/Buffer/BufferWidget.xml"
+        		url="widgets/toolBar/Buffer/BufferWidget.swf"/>-->
+
+
+
+
+    <widget label="截图"
+        position="toolBar"
+        left="0"  top="0"
+        icon="/Content/Gis/assets/yutuImages/images/截图.png"
+        wIcon="/Content/Gis/assets/yutuImages/images/截图.png"
+        config="/Content/Gis/widgets/toolBar/Screenshot/ScreenshotWidget.xml"
+            url="/Content/Gis/widgets/toolBar/Screenshot/ScreenshotWidget.swf"
+                />
+
+    <widget label="清空" name="clear"
+     position="toolBar"
+         icon="/Content/Gis/assets/yutuImages/images/清除.png"
+                />
+
+
+    <!--<widget label="水回溯缓冲查询" 
+        		name="bufferEnterPriseByRiver"
+        		position="toolBar"
+        		left="120" 
+        		top="120"   
+        		visible="false"  
+        		icon="assets/images/widgetIcon/i_edit.png"
+        		config="widgets/toolBar/BufferEnterPriseByRiver/BufferEnterPriseByRiverWidget.xml"
+        		url="widgets/toolBar/BufferEnterPriseByRiver/BufferEnterPriseByRiverWidget.swf"/>-->
+
+
+    <!--<widget label="轨迹回放" 
+       		name="trackPlay" 
+       			position="toolBar"
+       			preload="true"
+        		right="150" 
+        		top="100"  
+        		visible="true"
+            	icon="assets/images/clear.png"
+            	config="widgets/toolBar/TrackPlay/TrackPlayWiget.xml"
+            	url="widgets/toolBar/TrackPlay/TrackPlayWiget.swf" />-->
+
+
+
+
+
+
+
+    <!-- 周边查询是查询周边敏感点信息-->
+    <!-- <widget label="周边情况" 
+        		name="bufferUmpty"
+        		position="toolBar"
+        		right="150" 
+        		top="100"  
+        		visible="false"
+        		icon="assets/images/widgetIcon/i_edit.png"
+            	wIcon="assets/images/widgetIcon/i_edit.png"
+        		config="widgets/toolBar/BufferUmpty/BufferUmptyWidget.xml"
+        		url="widgets/toolBar/BufferUmpty/BufferUmptyWidget.swf" />  
+        		-->
+    <!-- 动态查询是查询物资、设备 车辆等信息的 查询-->
+    <!--
+         <widget label="动态查询" 
+         		name="dynamcBuffer"
+         		position="toolBar"
+        		left="120" 
+        		top="120"   
+        		visible="false"
+        		icon="assets/images/widgetIcon/i_edit.png"
+            	wIcon="assets/images/widgetIcon/i_edit.png"
+        		config="widgets/toolBar/dynamcBuffer/dynamcBufferWidget.xml"
+        		url="widgets/toolBar/dynamcBuffer/dynamcBufferWidget.swf"/>	 
+        		-->
+
+    <!--
+         <widget label="标注" 
+        		position="toolBar"
+        		left="0"  top="0" 
+        		icon="assets/yutuImages/images/动态标注.png"
+        		wIcon="assets/yutuImages/images/动态标注.png"
+        		config="widgets/toolBar/DynamicLabel/DynamicLabelWidget.xml"
+                url="widgets/toolBar/DynamicLabel/DynamicLabelWidget.swf"/>
+          <widget label="地图定位" 
+                position="toolBar"
+        		right = "90" top = "150"
+                icon="assets/yutuImages/images/定位.png"
+                wIcon="assets/yutuImages/images/定位.png"
+                config="widgets/toolBar/Marked/MarkedWidget.xml"
+                url="widgets/toolBar/Marked/MarkedWidget.swf"
+                />
+    			
+     	<widget label="图例" 
+     			name="mapLegend"
+     			position="toolBar"
+        		right="5" 
+        		top="80"  
+        		visible="flase"
+        		icon="assets/0822/envSpecial.png"
+            	wIcon="assets/images/widgetIcon/图层.png"
+        		config="widgets/toolBar/EnvSpecial/Legend/LegendWidget.xml"
+        		url="widgets/toolBar/EnvSpecial/Legend/LegendWidget.swf" />  
+	
+    
+        <widget label="实时监控"
+         		name="realTimeLocation"
+         		position="toolBar"
+        		right="150" 
+        		top="100"  
+        		visible="false"
+            	icon="assets/images/clear.png"
+            	 wIcon="assets/images/clear.png"
+            	config="widgets/toolBar/realTimeLocation/realTimeLocation.xml"
+           	 url="widgets/toolBar/realTimeLocation/realTimeLocation.swf"/>    
+           	 
+        <widget label="路径分析" 
+        		name="routeAnalyst"
+        		position="toolBar"
+        		right="150" 
+        		top="100"  
+        		visible="false"
+        		icon="assets/images/widgetIcon/图层.png"
+            	wIcon="assets/images/widgetIcon/图层.png"
+            	config="widgets/toolBar/RouteAnalyser/RouteAnalyserWidget.xml"
+            	url="widgets/toolBar/RouteAnalyser/RouteAnalyserWidget.swf"/>
+            	       
+            	       <widget label="动态标绘" 
+        		position="toolBar"
+        		right = "70"-
+        		top = "110"
+        		icon="assets/yutuImages/images/动态标绘.png"
+        		wIcon="assets/yutuImages/images/动态标绘.png"
+        		config="widgets/exInterface/EnvPlot/EnvPlotWidget.xml"
+                url="widgets/exInterface/EnvPlot/EnvPlotWidget.swf"/>
+    
+    -->
+
+
+    <!-- 业务功能各模块 -->
+
+
+    <!--<widget label="生态环境专题"
+        		position="proWorkBar" 
+        		right= "70" top = "110"
+        		  name="envSpecial"
+                icon="assets/yutuImages/images/96X96环境专题图.png"
+                wIcon="assets/yutuImages/images/48X48环境专题图.png"
+                config="widgets/proWorkBar/EnvSpecial/EnvSpecialWidget.xml"
+                url="widgets/proWorkBar/EnvSpecial/EnvSpecialWidget.swf"/>-->
+
+
+    <!--<widget label="污染源"   name="pollute"   
+        		position="proWorkBar"
+        		right = "70" top = "110"
+                icon="assets/yutuImages/images/96X96污染源_V2.png"
+                wIcon="assets/yutuImages/images/48X48污染源_V2.png"
+                config="widgets/proWorkBar/Pollute/PolluteWidget.xml"
+                url="widgets/proWorkBar/Pollute/PolluteWidget.swf"
+                />-->
+
+
+    <!--<widget label="统计分析"    name="statisticalAnalysis"
+        		position="proWorkBar"
+        		right = "70" top = "110"
+                icon="assets/yutuImages/images/96X96统计分析.png"
+                wIcon="assets/yutuImages/images/48X48统计分析.png"
+                config="widgets/proWorkBar/StatisticalAnalysis/StatisticalAnalysisWidget.xml"
+                url="widgets/proWorkBar/StatisticalAnalysis/StatisticalAnalysisWidget.swf"
+                />-->
+
+    <widget label="添加点"
+    preload="open"
+        config="/Content/Gis/widgets/exInterface/Point/PointWidget.xml"
+        url="/Content/Gis/widgets/exInterface/Point/PointWidget.swf"
+                />
+    <widget label="添加高级点" preload="open"
+        config="/Content/Gis/widgets/exInterface/AdvancedPoint/AdvancedPointWidget.xml"
+        url="/Content/Gis/widgets/exInterface/AdvancedPoint/AdvancedPointWidget.swf"/>
+    <widget label="地图上添加图表"
+        preload="open"
+            config="/Content/Gis/widgets/exInterface/Chart/ChartWidget.xml"
+            url="/Content/Gis/widgets/exInterface/Chart/ChartWidget.swf"
+                />
+    <widget label="地图区域渲染"
+        preload="open"
+            config="/Content/Gis/widgets/exInterface/Rendering/MapRendering.xml"
+            url="/Content/Gis/widgets/exInterface/Rendering/MapRendering.swf"
+                />
+    <widget label="地图显示区域"
+        preload="open"
+            config="/Content/Gis/widgets/exInterface/Extent/MapExtent.xml"
+            url="/Content/Gis/widgets/exInterface/Extent/MapExtent.swf"
+                />
+    <widget label="地图图例"
+        preload="close"
+            config="/Content/Gis/widgets/exInterface/ExLegend/ExLegendWidget.xml"
+            url="/Content/Gis/widgets/exInterface/ExLegend/ExLegendWidget.swf"
+                />
+    <widget label="清除地图"
+   preload="open"
+       config="/Content/Gis/widgets/exInterface/Clear/ClearWidget.xml"
+       url="/Content/Gis/widgets/exInterface/Clear/ClearWidget.swf"
+                />
+
+  </widgetcontainer>
+</configuration>

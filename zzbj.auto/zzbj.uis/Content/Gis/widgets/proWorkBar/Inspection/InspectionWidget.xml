@@ -1,0 +1,186 @@
+<?xml version="1.0" ?>
+<configuration>
+
+
+  <!-- 切换图标 -->
+  <titleBar>
+    <searchButton name="督查信息查询" iconUrl="assets/yutuImages/widgetIcon/企业查询图标.png"/>
+    <historyButton name="历史督查" iconUrl="assets/yutuImages/widgetIcon/超标报警图标.png"/>
+    <summaryButton name="概要统计" iconUrl="assets/yutuImages/images/20X20概述.png"/>
+  </titleBar>
+
+    <!-- 图标 -->
+    <images>
+    	<!-- 污染源 -->
+    	<pollMapIcon size="20" url="assets/yutuImages/proIcon/zxjkqy.png" />
+    	
+    	<!-- 废水企业 -->
+    	<pollWaterMapIcon size="20" url="assets/yutuImages/proIcon/废水企业.png" />
+    	
+    	<!-- 废气企业 -->
+    	<pollAirMapIcon size="20" url="assets/yutuImages/proIcon/废气企业.png" />
+    	
+    	<!-- 重金属企业 -->
+    	<pollHeavyMetalMapIcon size="20" url="assets/yutuImages/proIcon/重金属企业.png" />
+    	
+    	<!-- 污水处理厂 -->
+    	<pollSewageEntMapIcon size="20" url="assets/yutuImages/proIcon/污水处理厂.png" />
+    	
+    	<!-- 超标报警企业 -->
+    	<alarmMapIcon size="20" url="assets/yutuImages/proIcon/超标报警企业.png" />
+    	
+    	<!-- 建设项目 -->
+    	<projectMapIcon size="20" url="assets/yutuImages/proIcon/建设项目.png" />
+    	
+    	<!-- 选中标识 -->
+    	<targetIcon size="48" url="assets/yutuImages/mapIcon/Red_glow.swf" />
+    	
+    </images>
+    
+    <!-- 数据连接 --> 
+	<webService>
+    	
+    	<!-- 获取行业类型列表 -->
+    	<getIndustryDataList serviceLabel="dataService" functionName="sqlInConfig" xmlKey="DC_GetIndustryDataList" />
+    	<!-- 获取督察员列表 -->
+    	<getInspetorList serviceLabel="dataService" functionName="sqlInConfig" xmlKey="DC_GetSpectorDataList"/>
+    	<!-- 根据参数获得主要行业下的其他产业--->
+    	<getLikeIndustryList serviceLabel="dataService" functionName="sqlInConfig" xmlKey="DC_GetIndustryListSelected"/>
+    	
+    	<!--查询监管详细信息-->
+    	<getDetailInfo serviceLabel="dataService" functionName="sqlInConfig" xmlKey="DC_GetDetailInfo"/>
+    </webService>
+    
+    
+    <!-- 地图图层 -->
+    <layers>
+    	<!-- 行政区划 -->
+    	<layer id="provinceLayer" 
+    		   mapLabel="baseMap" layerName="三省界" 
+    		  nameField="NAME" regionCodeField="GBDM"
+    		   />
+    	<layer id="cityLayer" 
+			   mapLabel="baseMap" layerName="省界" 
+			  nameField="NAME" regionCodeField="GBDM"
+			   />
+    
+    	
+    	<!-- 污染源企业 -->
+    	<layer id="inspectorLayer"
+    		   mapLabel="polluteMap" layerName="监管数据"
+    		   name="EnterName" 
+    		   spectorName="SuperMan" 
+    		   industryName="TradeName"
+    		   inspectionTime="SuperTime"
+    		   inspectionQualify="Code_Statu"
+    		   inspectionCategory="Category"
+    		   enteridField="PKID"
+    		   enterID="PKID"
+    		   category="Category"
+    		   />
+    </layers>
+    
+    
+    <!-- 周边查询图层 -->
+    <bufferLayers>
+    	<layer id="village"
+    		   mapLabel="map" layerName="地名" 
+    		   layerType="point"
+    		   nameField="NAME" 
+    		   typeSymbol="assets/yutuImages/mapIcon/居民小区村庄.gif"
+    		   graphSymbol="assets/yutuImages/mapIcon/居民小区村庄.gif"
+    		   />
+    	<layer id="attractions"
+    		   mapLabel="map" layerName="郊区旅游景点" 
+    		   layerType="point"
+    		   nameField="NAME" 
+    		   typeSymbol="assets/yutuImages/mapIcon/旅游景点.gif"
+    		   graphSymbol="assets/yutuImages/mapIcon/旅游景点.gif"
+    		   />
+    	<layer id="ariStation" 
+    		   mapLabel="specialMap" layerName="空气自动监测站" 
+    		   layerType="point"
+    		   nameField="ZD" 
+    		   typeSymbol="assets/yutuImages/ItemCheckList/空气自动监测.png"
+    		   graphSymbol="assets/yutuImages/ItemCheckList/空气自动监测.png"
+    		   />
+    	<layer id="waterStation" 
+    		   mapLabel="specialMap" layerName="水质自动监测站" 
+    		   layerType="point"
+    		   nameField="STATION_NAME" 
+    		   typeSymbol="assets/yutuImages/ItemCheckList/水质自动监测.png"
+    		   graphSymbol="assets/yutuImages/ItemCheckList/水质自动监测.png"
+    		   />
+    	<layer id="sectionStation" 
+    		   mapLabel="specialMap" layerName="监测断面" 
+    		   layerType="point"
+    		   nameField="DMMC" 
+    		   typeSymbol="assets/yutuImages/ItemCheckList/饮用水.png"
+    		   graphSymbol="assets/yutuImages/ItemCheckList/饮用水.png"
+    		   />
+    	<layer id="drinkWaterRegion" 
+    		   mapLabel="specialMap" layerName="饮用水源保护区" 
+    		   layerType="polygon"
+    		   nameField="SGNQMC" 
+    		   typeSymbol="assets/yutuImages/proIcon/饮用水源保护区.png"
+    		   graphSymbol="0x00ff00"
+    		   />
+    </bufferLayers>
+    
+    
+    
+    <!-- 地图气泡窗口 -->
+    <popupWindow>
+    	<T_Bas_EnterSceneSuperSituation width="300">
+    		<PopUpField name="企业名称" field="EnterName"/>
+    		<PopUpField name="所属行业" field="TradeName"/>
+    	</T_Bas_EnterSceneSuperSituation>
+    </popupWindow>
+
+    
+    <!--“”中所要显示的行政编码-->
+	<region region1="210000000000" region2="220000000000" region3="230000000000" />
+	
+    <!--“概述”中所要调用的webservice的名字-->
+    <functionName label="His_GetSummary" />
+    <functionName1 label="pointOnMap" />
+    <mapMorePointsBuffer label="0.005" />
+
+    
+    
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	
+
+
+
+
+		
+
+
+
+
+
+
+
+

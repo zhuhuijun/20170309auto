@@ -15,16 +15,16 @@ using zzbj.models;
 using zzbj.repository;
 public class InjectModule
 {
-    /// <summary>
-    /// 加载
-    /// </summary>
-    /// <param name="builder"></param>
+	/// <summary>
+	/// 加载
+	/// </summary>
+	/// <param name="builder"></param>
 	public static void  LoadInjectModule(ContainerBuilder builder)
 	{
-        builder.RegisterGeneric(typeof(Dal<>)).As(typeof(IDal<>)).InstancePerDependency();
-        builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerDependency();
+		builder.RegisterGeneric(typeof(Dal<>)).As(typeof(IDal<>)).InstancePerDependency();
+		builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerDependency();
 		builder.RegisterType<personBll>().As<IpersonBll>();
-        builder.RegisterType<customBll>().As<IcustomBll>();
+		builder.RegisterType<customBll>().As<IcustomBll>();
 <#
 foreach(DbTable dbTable in DbHelper.GetDbTables(config.ConnectionString, config.DbDatabase))
 {  
@@ -38,7 +38,7 @@ foreach(DbTable dbTable in DbHelper.GetDbTables(config.ConnectionString, config.
 		// 重新生成代码，这些更改将会丢失。
 		// </auto-generated>
 		//------------------------------------------------------------------------------
-	    builder.RegisterType<<#=tableName #>Bll>().As<I<#=tableName #>Bll>();
+		builder.RegisterType<<#=tableName #>Bll>().As<I<#=tableName #>Bll>();
 
 <#
 }

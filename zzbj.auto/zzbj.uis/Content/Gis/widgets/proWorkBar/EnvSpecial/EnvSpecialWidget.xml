@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<configuration>
+
+	<widgetTemplate width="370" height="250" />
+		
+    
+       <specialMapServer  type="dynamic" visible="false" name="specialMap"
+                   url="http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer"
+                   />   
+                   
+    <!-- 监测项列表 -->
+    <itemList>
+    
+    	    <item name="生态保护地" id="nearSeaQuality"
+          layerType="feature" layerLabel="specialMap" layerName="生态保护地"
+          layerNameField="区域名称"
+          layerVisible="true" layerAlpha="0.75"
+          iconUrl="assets/images/0822/生态保护地.png"
+    		  />
+    	<item name="野生动物分布区" id="id2" 
+    		  layerType="feature" layerLabel="specialMap" layerName="野生动物分布区"
+    		  layerNameField="NAME"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/野生动物分布区.png"
+    		  />
+    	<item name="生态功能区全部" id="id3" 
+    		  layerType="feature" layerLabel="specialMap" layerName="生态功能区全部"
+    		  layerNameField="ZZDM"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/生态功能区全部.png"
+    		  />
+      <item name="生物多样性保护地" id="id4"
+    		  layerType="feature" layerLabel="specialMap" layerName="生物多样性保护地"
+    		  layerNameField="ZZDM"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/生物多样性保护地.png"
+    		  />
+      <item name="水源涵养建设" id="id5"
+    		  layerType="feature" layerLabel="specialMap" layerName="水源涵养建设"
+    		  layerNameField="ZZDM"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/水源涵养建设.png"
+    		  />
+      <item name="珍稀树种保护与恢复" id="id6"
+    		  layerType="feature" layerLabel="specialMap" layerName="珍稀树种保护与恢复"
+    		  layerNameField="ZZDM"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/珍稀树种保护与恢复.png"
+    		  />
+      <item name="水土保持村界" id="id7"
+        layerType="feature" layerLabel="specialMap" layerName="水土保持村界"
+        layerNameField="ZZDM"
+        layerVisible="false" layerAlpha="0.75"
+        iconUrl="assets/images/0822/水土保持村界.png"
+    		  />
+      <item name="水土保持区自然" id="id8"
+       layerType="feature" layerLabel="specialMap" layerName="水土保持区自然2"
+       layerNameField="ZZDM"
+       layerVisible="false" layerAlpha="0.75"
+       iconUrl="assets/images/0822/水土保持区自然.png"
+    		  />
+    		 <item name="水源地保护区" id="id9"
+             layerType="feature" layerLabel="specialMap" layerName="水源地保护区"
+             layerNameField="ZZDM"
+             layerVisible="false" layerAlpha="0.75"
+             iconUrl="assets/images/0822/水源地保护区.png"
+    		  />
+    		  
+    </itemList>
+   
+   
+       
+    <!--
+    name 显示名称 
+    layerName 图层名称
+    
+    layerNameField 显示字段
+    layerVisible 图层默认是否可见
+    layerAlpha 图层透明度
+    iconUrl 图层图标
+    
+    <item name="水源地保护区"  layerName="水源地保护区"
+    		  layerNameField="名称" layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/yutuImages/proIcon/地表水功能区划（线状）40.png"/>
+    -->
+    
+    <!-- 地图气泡窗口 -->
+    <mapInfoWindow>
+    
+    	<nearSeaQuality>
+    		<PopUpField name="区域名称: "   field="区域名称" visible="true"/>
+    		<PopUpField name="保护类型: " field="保护类型" visible="true"/>
+		</nearSeaQuality> 
+		
+		<lineSurfaceWater>
+		    <PopUpField name="水环境功能区: "    field="SHJGNQMC" visible="true"/>
+    		<PopUpField name="目标水质: "    field="MBSZ" visible="true"/>
+			<PopUpField name="现状水质: "    field="XZSZ" visible="true"/>
+			<PopUpField name="所属河流: "    field="RIVER" visible="true"/>
+			<PopUpField name="行政区: "    field="XZQ" visible="true"/>
+		</lineSurfaceWater>
+    </mapInfoWindow>
+  
+</configuration>
+
+
+
+
+
+
+

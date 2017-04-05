@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<configuration>
+    <!-- 最短路径分析服务地址 20111101 yxg add -->
+	<!--<ShortestRouteAnalyst>http://yutu418/ArcGIS/rest/services/ShortestRouteService5/GPServer/ShortestRouteAnalyst</ShortestRouteAnalyst>-->
+	<ShortestRouteAnalyst>http://yutu418/ArcGIS/rest/services/ShortestRoute6/GPServer/ShortestRouteAnalyst</ShortestRouteAnalyst>
+	<raisMoveParam mapExtent="8" moveSpeed="10" lineColor="0xFF0000" lineAlpha="1" lineWidth="9"/>
+	<!--<getResultAndShow>getResultAndShow</getResultAndShow>-->
+	<!--<clear>clearResult</clear>-->	
+</configuration>

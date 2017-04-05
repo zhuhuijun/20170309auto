@@ -1,0 +1,16 @@
+<configuration>
+
+<riverMapServer type="dynamic">http://yutu418/ArcGIS/rest/services/hunhetest/MapServer</riverMapServer>
+ 
+ <waterlayers>
+    <layer>
+         <name>浑河</name><!--模型计算文件的目录名称-->
+         <url>http://yutu418/ArcGIS/rest/services/hunhetest/MapServer/0</url><!--网格图层对应的服务地址-->
+         <extent>123.3,41.6,123.6,41.9</extent><!--切换模型时地图的缩放范围-->
+         <grdNum>2000</grdNum><!--网格个数-->
+         <edgeNum>5</edgeNum>
+         <edge>POINT</edge>
+    </layer>
+ </waterlayers>
+ 
+</configuration>

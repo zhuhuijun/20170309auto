@@ -1,0 +1,105 @@
+/* CSS Document */
+        html, body
+        {
+            height: 100%;
+        }
+        body
+        {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+     
+            background-color: #cce3ec;
+        }
+        object:focus
+        {
+            outline: none;
+        }
+#flashContent
+{
+   display: none;
+}
+img {
+	border: 0;
+}
+ul, li {
+	list-style: none;
+}
+.clearFloat {
+	clear: both;
+}
+#demoContent {
+	text-align: center;
+}
+#demoContent .effect {
+	display: inline-block;
+*display:inline;
+	zoom: 1;
+	text-align: left;
+	margin: 0 auto;
+}
+#doubleSlideTxt {
+	zoom: 1;
+	text-align: left;
+}
+#doubleSlideTxt .parHd {
+	position: absolute;
+	z-index: 1;
+	top: 30px;
+	left:20px;
+	width: 30px;
+	overflow: hidden;
+}
+#doubleSlideTxt .parHd ul {
+	padding: 0;
+	margin: 0;
+}
+#doubleSlideTxt .parHd li {
+	width: 14px;
+	padding: 5px 2px 5px 2px;
+	line-height: 16px;
+	font-size:12px;
+	border: 0px solid #baccdf;
+	border-left: 0;
+	margin-bottom: 5px;
+	background: #fff;
+	color: #2664a8;
+	cursor: pointer;
+	margin-left: 3px;
+}
+#doubleSlideTxt .parHd li.on {
+	background: #1c508f;
+	font-weight: bold;
+	color: #ffe760;
+	border-right: 3px solid #fff;
+	margin-left: 0px;
+	position: relative;
+	z-index: 100;
+	padding: 5px 2px 5px 2px;
+	font-size:12px;	
+}
+#doubleSlideTxt .parBd {
+	position: absolute;
+	z-index: 99;
+	width: 72%;
+	right: 0px;
+	left:43px;
+	top: 20px;
+	bottom:10px;
+	 overflow:auto;
+}
+#doubleSlideTxt .parBd .slideTxtBox {
+	height: 100%;
+	width: 100%;
+	border: 0;
+	padding: 0px;
+	float: left;
+	z-index: 100;
+	vertical-align:middle;
+
+}
+/* Gis展示图片背景样式*/
+.PhotoBackColor
+{
+    background-color:Gray;
+}

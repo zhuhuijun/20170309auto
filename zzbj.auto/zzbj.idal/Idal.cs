@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace zzbj.idal
 {
-    public interface IDal<T> where T : class
+    public interface IDal<TEntity> where TEntity : class
     {
-        void Insert(T entity);
-        void Update(T entity);
-        void Delete(T entity);
+        bool Insert(TEntity entity);
+        bool Update(TEntity entity);
+        bool Delete(TEntity entity);
+        /// <summary>
+        /// 获取所有数据
+        /// </summary>
+        /// <returns>返回所有数据</returns>
+        IQueryable<TEntity> FindAllData();
     }
 }

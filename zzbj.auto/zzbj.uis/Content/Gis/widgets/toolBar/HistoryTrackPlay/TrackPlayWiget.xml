@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+//作者： jyx 
+//时间：2012年08月10日
+//配置文件 flag是数据库中配置前缀的名字
+////////////////////////////////////////////////////////////////////////////////
+-->
+<configuration>
+	<BaseParam flag="" timeIntervar="30" lineColor="0xff0000" lineAlpha="1" lineWidth="2"
+	 background="0xff0000" moveDistance="1" clearImg="assets/images/i_clear.png"></BaseParam>
+	<Databse connect="providerName=System.Data.SqlClient;Data Source=YUTU418\MSSQLSERVEER2008;Initial Catalog=DB_MapUniProduct_37;Persist Security Info=True;User ID=sa;Password=sa"/>
+	<Webservice url="http://yutu567/jtTrackPlayService/Service.asmx?wsdl"/>
+	<TrackLayer basePointLayer="BaseHisPointLayer" trackPointLayer="trackHisPointLayer" trackLineLayer="trackHisLineLayer"/>
+	<ExtendParam  baseImg="assets/images/car.gif" startImg="assets/images/point_blue_small.png" 
+	moveImg="assets/images/CarEast.gif"   
+	imgHeight="24" imgWidth="24"  isRevolved="1">
+		<buttons>
+			<button name="扩展" function="Alert" parameters="name,phoneno"  img="assets/images/globe.png"/>
+			<button name="视频" function="View" parameters="name,phoneno"  img="assets/images/camera.png"/>
+		</buttons>  
+		<fields>
+			<field name="name" description="车牌号"/>
+			<field name="phoneno" description="电话号码"/>
+			<field name="type" description="职责"/>
+			<field name="unit" description="单位"/>
+		</fields>
+	</ExtendParam>
+
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

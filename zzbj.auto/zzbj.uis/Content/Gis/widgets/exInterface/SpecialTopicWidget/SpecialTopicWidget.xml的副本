@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<configuration>
+
+
+
+<externalInterface>
+	
+		<!--  
+	
+			名称：外部通过js调用内部的服务专题
+	    	
+	    	接口：SpecialTopic
+	    	
+	    	参数：JsonData:Array (json格式的数组）
+	    	
+	    	数据结构：	[
+							{
+								
+								specialItem: {enable: name:_,    layerType:_,  layerLabel:_,  layerName:_,   layerNameField:_,   layerVisible:_ ,   layerAlpha:_,   iconUrl:_},
+								iframeWindow:{enable:_,  url:_,  width:_,  height:_},
+								clickCallback:{enable:_,  funcName:_,  parameter:[_,_...]}
+								
+							},
+							{
+								…
+							},
+							…
+						]
+
+
+	    	 <item name="生态保护地" 
+          layerType="feature" layerLabel="specialMap" layerName="生态保护地"
+          layerNameField="区域名称"
+          layerVisible="true" layerAlpha="0.75"
+          iconUrl="assets/images/0822/生态保护地.png"
+    		  />
+	    	数据说明：	参数采用 json 数据来传递。整个数据整体是一个数组。里面包含若干对象，每一对象代表一个点信息。 
+
+						specialItem： 图层的信息 里面的参数 
+	                                   name显示的图层名称（可以不是真实的地图服务的图层名称）；
+	                                   layerType       加载专题的图层名称， 默认要采用feature；
+	                                   layerLabel     关联的地图服务的name；
+	                                   layerName      专题对应的图层名称；
+	                                   layerNameField 鼠标移动到图形上后显示图形那个字段的值;
+	                                   layerVisible   图层默认是否可见；
+	                                   layerAlpha     默认图层的透明度；
+	                                   iconUrl        默认图层的图片；
+
+					    iframeWindow：弹出的气泡框内嵌入外部页面。
+					                  enable     为决定是否要使用此功能，
+					                  url        为页面地址；
+					                  width      页面的宽度；
+					                  height     页面的高度； 
+					                 //autoShow  为是否要在加载时自动显示。
+						
+						clickCallback：点击图标时向外派发事件，
+						             enable         为决定是否要使用此功能，
+						             funcName       为要调用的外部函数名称。
+						             parameter      为掉用外部函数时要传的参数，程序在调用外部函数时会传两个参数，一个是将该点对象传入时的所有参数以json格式原样传回，另一个是parameter传的参数。 
+						             
+						             
+								    				
+	    	示例：  
+	    	
+		 	备注：	
+		 	
+		-->
+		<exAddPointList>SpecialTopic</exAddPointList>
+		
+
+		
+	</externalInterface>
+	
+
+	<widgetTemplate width="370" height="250" />
+		
+    
+       <specialMapServer  type="dynamic" visible="false" name="specialServiceMap"
+                   url="http://localhost/ArcGIS/rest/services/tjSpecial/MapServer"
+                   />   
+                   
+    <!-- 监测项列表 -->
+    <itemList>
+    
+    	  <item name="生态保护地" id="nearSeaQuality"
+          layerType="feature" layerLabel="specialMap" layerName="生态保护地"
+          layerNameField="区域名称"
+          layerVisible="true" layerAlpha="0.75"
+          iconUrl="assets/images/0822/生态保护地.png"
+    		  />
+    		  
+    	 <!--
+    	<item name="野生动物分布区" id="id2" 
+    		  layerType="feature" layerLabel="specialMap" layerName="野生动物分布区"
+    		  layerNameField="NAME"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/野生动物分布区.png"
+    		  />
+    	<item name="生态功能区全部" id="id3" 
+    		  layerType="feature" layerLabel="specialMap" layerName="生态功能区全部"
+    		  layerNameField="ZZDM"
+    		  layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/images/0822/生态功能区全部.png"
+    		  />
+    		  -->
+    </itemList>
+   
+   
+       
+    <!--
+    name 显示名称 
+    layerName 图层名称
+    
+    layerNameField 显示字段
+    layerVisible 图层默认是否可见
+    layerAlpha 图层透明度
+    iconUrl 图层图标
+    
+    <item name="水源地保护区"  layerName="水源地保护区"
+    		  layerNameField="名称" layerVisible="false" layerAlpha="0.75"
+    		  iconUrl="assets/yutuImages/proIcon/地表水功能区划（线状）40.png"/>
+    -->
+    
+    <!-- 地图气泡窗口 -->
+    <mapInfoWindow>
+    
+    	<nearSeaQuality>
+    		<PopUpField name="区域名称: "   field="区域名称" visible="true"/>
+    		<PopUpField name="保护类型: " field="保护类型" visible="true"/>
+		</nearSeaQuality> 
+		
+		<lineSurfaceWater>
+		    <PopUpField name="水环境功能区: "    field="SHJGNQMC" visible="true"/>
+    		<PopUpField name="目标水质: "    field="MBSZ" visible="true"/>
+			<PopUpField name="现状水质: "    field="XZSZ" visible="true"/>
+			<PopUpField name="所属河流: "    field="RIVER" visible="true"/>
+			<PopUpField name="行政区: "    field="XZQ" visible="true"/>
+		</lineSurfaceWater>
+    </mapInfoWindow>
+  
+</configuration>
+
+
+
+
+
+
+

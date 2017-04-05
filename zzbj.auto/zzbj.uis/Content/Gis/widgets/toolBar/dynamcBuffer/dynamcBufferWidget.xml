@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<configuration>
+	
+  <!-- 视图切换图标 -->
+	<TitlebarButton>
+		<envAssButtonURL tooltip="条件">assets/images/i_searchtext.png</envAssButtonURL>
+		<resultButtonURL tooltip="结果">assets/images/i_table.png</resultButtonURL>
+	</TitlebarButton>
+
+ 	<geometryServiceURL>http://yutu418/ArcGIS/rest/services/Geometry/GeometryServer</geometryServiceURL>
+	
+	<webServiceURL>http://yutu115/syGisWebservice/Service.asmx?wsdl</webServiceURL>
+	
+	<layers>
+		<layer>
+	      <id>dangerSource</id>
+	      <name index="1">风险源</name>
+	      <table>T_BAS_ENTERPRISE</table>
+	      <symbolURL fontSize="20">assets/images/yutu/enterprise.gif</symbolURL>
+	      <fields all="false">
+       	 		<field name="typeName" alias="类型："/>
+      	   </fields>
+	    </layer>
+    <layer>
+      <id>dangerSource</id>
+      <name index="2">应急物资</name>
+      <table>T_Bas_EmergencyEquipment</table>
+      <symbolURL fontSize="20">assets/images/yutu/yjwz.gif</symbolURL>
+      <fields all="false">
+        <field name="typeName" alias="类型："/>
+      </fields>
+    </layer>
+    <layer>
+      <id>dangerSource</id>
+      <name index="3">应急设备</name>
+      <table>T_Bas_EnterSoluAndSave</table>
+      <symbolURL fontSize="20">assets/images/yutu/yjsb.png</symbolURL>
+      <fields all="false">
+        <field name="typeName" alias="类型："/>
+      </fields>
+    </layer>
+	</layers>
+	
+	<dingwei xfield="Longitude" yfield="Latitude" name="EnterName"/>
+	<info>widgets/InfoTemplates/InfoPopupWidget.swf</info>
+	<bufferRadius>1500</bufferRadius>
+	<bufferwidgets>
+		<widget name="search"/>
+		<widget name="AirModelBuffer"/>
+		<widget name="buffer"/>
+	<!--<widget name="dynamcBuffer"/>-->	
+	<!--<widget name="bufferUmpty"/>-->
+	</bufferwidgets>
+	
+<JSLayerEventInfo2nd>LayerEventInfo2nd</JSLayerEventInfo2nd>
+	
+<JSLayerEventInfo>LayerEventInfo</JSLayerEventInfo>
+
+<closedWidget>closeddynamcBufferWidget</closedWidget>
+<openWidget>opendynamcBufferWidget</openWidget>
+</configuration>

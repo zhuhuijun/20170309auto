@@ -45,6 +45,10 @@
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zzbj.commons\zzbj.commons.csproj">
+      <Project>{becafba4-29b5-4371-9e15-069c08845dcd}</Project>
+      <Name>zzbj.commons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zzbj.dal\zzbj.dal.csproj">
       <Project>{df608578-fb20-415d-beaf-3abec3b84734}</Project>
       <Name>zzbj.dal</Name>

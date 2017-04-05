@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<configuration>
+	
+  	<!-- 调取轨迹数据 AS调用JS的函数名称 参数(startTime:Date,entTime:Date) -->
+	<getDataJSfunctionName>getParamRealTime</getDataJSfunctionName>
+	
+	<!-- 获得轨迹数据 JS调用AS的函数名称 参数(data:String)JSON格式字符串 --> 
+	<setDataASfunctionName>getrealTimeLocation</setDataASfunctionName>
+	
+	<!-- 车辆选择中要显示的字段 -->
+	<carListLabelField>SIM_ID</carListLabelField>
+	<carListIdField>PK_LocalizerDevice_ID</carListIdField>
+	
+	<!-- 轨迹回放数据中的经纬度字段 -->
+	<historyViewLongitudeField>X</historyViewLongitudeField>
+	<historyViewLatitudeField>Y</historyViewLatitudeField>
+	<historyViewLocateTime>LocatedTime</historyViewLocateTime>
+	<historyViewLocateMsgField>LocatedMsg</historyViewLocateMsgField>
+	
+	<!-- 轨迹回放中的参数 moveSpeed为timer刷新频率1000为一秒刷新一次-->
+	<raisMoveParam mapExtent="8" moveSpeed="5" lineColor="0xFF0000" lineAlpha="1" lineWidth="5"/>
+
+	<!-- 轨迹回放中的图标 -->
+	<historyViewMoveSymURL>assets/images/yutu/car.gif</historyViewMoveSymURL>
+	
+	<startSymURL>assets/images/yutu/car.gif</startSymURL>
+	
+	<carinfo name="CarName" id="CarNo" layout="CarLayout"></carinfo>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

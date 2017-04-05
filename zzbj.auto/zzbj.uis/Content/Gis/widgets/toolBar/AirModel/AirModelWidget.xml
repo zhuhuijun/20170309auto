@@ -1,0 +1,66 @@
+﻿<configuration>
+
+    <AirModelWebService url="http://yutu567/AirModelService/AirModelService.asmx?wsdl" ></AirModelWebService>
+    <legendBackgroud color="0x2D91CC"></legendBackgroud>
+    <GeometryService url="http://yutu567/ArcGIS/rest/services/Geometry/GeometryServer"/>
+    <IdentifyService url="http://yutu567/ArcGIS/rest/services/pingdingshan/pdsMapve/MapServer"/>
+	<BaseConfig serverMachine="yutu567" serviceName="airmodel" ip="yutu567" username="administrator" password="admin"  pagesize="5" step="10" minDistance="1" maxDistance="10000">	</BaseConfig>
+	
+	<WidgetConfig AirModelImage="assets/images/i_camera.png"  drawPointImage="assets/images/i_flag.png"
+	 analyseImage="assets/images/i_camera.png" 
+	 tableImage="assets/images/edit_attachments.png" 
+	 clearImage="assets/images/i_clear.png" bVisible="false" >	
+	 </WidgetConfig>
+	<ResultDisplayLayers>
+		<AirModelPointLayer name="AirModelPointLayer" alpha="1"  image="assets/images/i_flag.png"/>
+		<AirModelLineLayer name="AirModelLineLayer" alpha="0"  image=""/>
+		<AirModelRegionLayer name="AirModelRegionLayer" alpha="0"  image=""/>
+	</ResultDisplayLayers>
+	
+	<QueryLayers>
+
+		<layer name="教育科研" idno="7" img="assets/images/yutu/school.gif" imgHeight="16" imgWidth="16" titileField="NAME">
+				<field name="NAME" description="名称"/>
+				<field name="CITY" description="城市"/>
+		</layer>
+		
+
+		<layer name="医疗卫生" idno="8" img="assets/images/yutu/hospital.gif" imgHeight="16" imgWidth="16" titileField="NAME">
+		        <field name="NAME" description="名称"/>
+		</layer>
+
+		<layer name="居民小区村庄" idno="10" img="assets/images/yutu/resiArea.gif" imgHeight="16" imgWidth="16" titileField="NAME">
+				<field name="NAME" description="名称"/> 
+    </layer>
+    <layer name="党政机关" idno="5" img="assets/images/yutu/zhengfjg.png" imgHeight="16" imgWidth="16" titileField="NAME">
+      <field name="NAME" description="名称"/>
+    </layer>
+	</QueryLayers>
+</configuration>
+
+<!--参数配置说明
+标签                              说明                 属性    						属性描述                                      值
+================================================================================
+AirModelWebService     气模型分析        URL     						气模型分析的webservice地址       http://localhost/AirModel/AirModelService.asmx
+================================================================================
+BaseConfig                   基本配置           serverMachine  		服务的机器名或IP地址
+BaseConfig                   基本配置           serviceName     		地图服务名
+									基本配置			username                 用户名
+									基本配置			password					密码
+================================================================================
+WidgetConfig               界面设计          AirModelImage          气模型图片
+WidgetConfig               界面设计          titleImage           		气模型图片
+WidgetConfig               界面设计          drawPointImag    		绘制污染点图片
+WidgetConfig               界面设计          tableImage			    结果显示图片
+WidgetConfig               界面设计          clearImage				    清除图片
+================================================================================
+ResultDisplayLayers      结果显示图层
+AirModelLineLayer       线显示图层         name:线层的名称  alpha:线层显示的透明度
+AirModelRegionLayer   面显示图层         name:面层的名称  alpha:面层显示的透明度
+MGDLayer				   查询影响的敏感点显示图层         name:点层的名称  alpha:点层显示的透明度
+================================================================================
+QueryLayers                 要查询的敏感点图层
+layer                            图层                   name:图层名称 id:图层在地图服务中的id  displayImage:查询出的结果显示到地图上的图片
+fields						   显示的字段集合
+field                             字段                  name:字段名称     description:字段描述  
+-->

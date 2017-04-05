@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration>
+	
+	<!-- 点位信息图标 -->
+	<pushpinIcon>assets/yutuImages/mapIcon/pushpin_centered.png</pushpinIcon>
+	
+</configuration>
+

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,9 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bas_userBll.cs">
-      <DependentUpon>BllTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="BllTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -51,23 +52,281 @@
     <Compile Include="customBll.cs" />
     <Compile Include="personBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rel_menuactionsBll.cs">
+    <Compile Include="SysDataHelper.cs" />
+    <Compile Include="T_Bas_ApplyServiceBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="rel_rolemenusBll.cs">
+    <Compile Include="T_Bas_CalibrateParameterBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="sys_actionBll.cs">
+    <Compile Include="T_Bas_CityBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="sys_menuBll.cs">
+    <Compile Include="T_Bas_DEPARTMENTINFOBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="sys_roleBll.cs">
+    <Compile Include="T_Bas_DeviceBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceCalibrateCurveBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceCalibratePointBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceExamineBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceExamineNotesBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DringkingWaterSourceInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DrinkingWaterFactoryInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DrinkWaterSamplingInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_ExamineBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_FuncitonNoisePointInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_GasItemBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_GasPointInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_GridInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LabMonitorItemBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LakeInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LakeVerticaPointlInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LinkBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaintainRecordBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialInventoryBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialPurchaseBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialPurchaseRecordBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialsBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialUseRecordBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_ModuleBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RainfallItemBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RainfallPointInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RiversInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RoadBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_SeaWaterItemBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_SeaWaterPointInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_SectionPointInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_StationBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_TrafficNoisePointInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_WarehouseBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_WaterItemBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_WaterSamplingBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_CheckTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_ControlLevelBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_FunctionBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasItemTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasItemTypeRelevanceBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasStandardLimitBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasTimeTypesBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GradeTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_LakeQualityStandardBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_LakeSamplingBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_LinkRelevanceBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_NoiseFunctionBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_NoiseSourceBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_PresentSituationBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_QualityLevelBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_RiverQualityStandardBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_SeaWaterFactorLimitBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_SeaWaterFunctionBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterItemLimitBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterQualityBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterSourceTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterStandardLimitBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterSystemBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_CalibrateRunTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_CONVENTIONRULEINFOBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_DeviceTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_DrinkingWaterTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_GasOriginStandardBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_LakeOriginStandardBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_MaterialModelBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_MaterialsTypeBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_NoiseDayAndNightInfoBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_NoiseNetWokManageLevelBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_RegionBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_RiverOriginStandardBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_SeaWaterOriginStandardBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_SoundSourceBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_StandardToLimitBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_DEPARTMENTINFOBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_ModuleOperationBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_OperationIdBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_RoleBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_RoleMouduleBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_RoleOperationBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_UserDeptBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_UserRoleBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_UsersBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zzbj.commons\zzbj.commons.csproj">
+      <Project>{becafba4-29b5-4371-9e15-069c08845dcd}</Project>
+      <Name>zzbj.commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zzbj.core\zzbj.core.csproj">
+      <Project>{0897ea45-fbb6-4df8-9fdd-788b5728033f}</Project>
+      <Name>zzbj.core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zzbj.iBll\zzbj.ibll.csproj">
       <Project>{8d3d6880-91eb-4bb2-87ad-87fe91f20e34}</Project>
       <Name>zzbj.ibll</Name>
@@ -89,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

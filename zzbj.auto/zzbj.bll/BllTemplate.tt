@@ -28,7 +28,9 @@ foreach(DbTable dbTable in DbHelper.GetDbTables(config.ConnectionString, config.
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
+
 using zzbj.ibll;
 using zzbj.models;
 using zzbj.repository;
@@ -41,26 +43,35 @@ namespace zzbj.bll
 	public  class  <#=tableName#>Bll:I<#=tableName#>Bll
     {
 	    private readonly IRepository<<#=tableName#>> _repository;
+		
         public <#=tableName#>Bll(IRepository<<#=tableName#>> repository)
         {
             _repository = repository;
         }
 
-        public void Insert(<#=tableName#> p)
+        public bool Insert(<#=tableName#> p)
         {
-            _repository.Insert(p);
+            return _repository.Insert(p);
         }
 
-        public void Update(<#=tableName#> p)
+        public bool Update(<#=tableName#> p)
         {
-            _repository.Update(p);
+           return  _repository.Update(p);
         }
 
-        public void Delete(<#=tableName#> p)
+        public bool Delete(<#=tableName#> p)
         {
-            _repository.Delete(p);
+           return _repository.Delete(p);
         }
-
+		/// <summary>
+        /// 根据查询条件获取数据
+        /// </summary>
+        /// <param name="propertyExpr">查询条件</param>
+        /// <returns></returns>
+        public IList<<#=tableName#>> GetData(Expression<Func<<#=tableName#>, bool>> propertyExpr)
+		{
+			return _repository.GetData(propertyExpr);
+		}
     }
 }
 

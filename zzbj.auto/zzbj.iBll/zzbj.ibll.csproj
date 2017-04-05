@@ -40,9 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ibas_userBll.cs">
-      <DependentUpon>IBllTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="IBllTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -51,19 +48,268 @@
     <Compile Include="IcustomBll.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="IpersonBll.cs" />
-    <Compile Include="Irel_menuactionsBll.cs">
+    <Compile Include="IT_Bas_ApplyServiceBll.cs">
       <DependentUpon>IBllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Irel_rolemenusBll.cs">
+    <Compile Include="IT_Bas_CalibrateParameterBll.cs">
       <DependentUpon>IBllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Isys_actionBll.cs">
+    <Compile Include="IT_Bas_CityBll.cs">
       <DependentUpon>IBllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Isys_menuBll.cs">
+    <Compile Include="IT_Bas_DEPARTMENTINFOBll.cs">
       <DependentUpon>IBllTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Isys_roleBll.cs">
+    <Compile Include="IT_Bas_DeviceBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DeviceCalibrateCurveBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DeviceCalibratePointBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DeviceExamineBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DeviceExamineNotesBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DeviceInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DringkingWaterSourceInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DrinkingWaterFactoryInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_DrinkWaterSamplingInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_ExamineBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_FuncitonNoisePointInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_GasItemBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_GasPointInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_GridInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_LabMonitorItemBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_LakeInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_LakeVerticaPointlInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_LinkBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_MaintainRecordBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_MaterialInventoryBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_MaterialPurchaseBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_MaterialPurchaseRecordBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_MaterialsBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_MaterialUseRecordBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_ModuleBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_RainfallItemBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_RainfallPointInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_RiversInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_RoadBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_SeaWaterItemBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_SeaWaterPointInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_SectionPointInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_StationBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_TrafficNoisePointInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_WarehouseBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_WaterItemBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Bas_WaterSamplingBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_CheckTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_ControlLevelBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_FunctionBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_GasItemTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_GasItemTypeRelevanceBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_GasStandardLimitBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_GasTimeTypesBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_GradeTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_LakeQualityStandardBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_LakeSamplingBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_LinkRelevanceBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_NoiseFunctionBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_NoiseSourceBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_PresentSituationBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_QualityLevelBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_RiverQualityStandardBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_SeaWaterFactorLimitBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_SeaWaterFunctionBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_WaterItemLimitBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_WaterQualityBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_WaterSourceTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_WaterStandardLimitBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Code_WaterSystemBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_CalibrateRunTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_CONVENTIONRULEINFOBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_DeviceTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_DrinkingWaterTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_GasOriginStandardBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_LakeOriginStandardBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_MaterialModelBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_MaterialsTypeBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_NoiseDayAndNightInfoBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_NoiseNetWokManageLevelBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_RegionBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_RiverOriginStandardBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_SeaWaterOriginStandardBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_SoundSourceBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Cod_StandardToLimitBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_DEPARTMENTINFOBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_ModuleOperationBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_OperationIdBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_RoleBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_RoleMouduleBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_RoleOperationBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_UserDeptBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_UserRoleBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IT_Sys_UsersBll.cs">
       <DependentUpon>IBllTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

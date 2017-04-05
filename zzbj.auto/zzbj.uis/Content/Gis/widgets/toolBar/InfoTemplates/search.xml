@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<configuration>
+    <fields>NAME</fields>
+    <titlefield>NAME</titlefield>
+    <datefields>NAME</datefields>
+    <zoomscale>150000</zoomscale>
+</configuration>

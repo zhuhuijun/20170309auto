@@ -31,8 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bas_user.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
-    </Compile>
     <Compile Include="custom.cs" />
+    <Compile Include="DapperModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DapperModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DapperModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DapperModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DapperModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Entity1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -52,30 +75,477 @@
     </Compile>
     <Compile Include="person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rel_menuactions.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
+    <Compile Include="T_Bas_ApplyService.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="rel_rolemenus.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
+    <Compile Include="T_Bas_CalibrateParameter.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sys_action.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
+    <Compile Include="T_Bas_City.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sys_menu.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
+    <Compile Include="T_Bas_DEPARTMENTINFO.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sys_role.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
+    <Compile Include="T_Bas_Device.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceCalibrateCurve.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceCalibratePoint.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceExamine.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceExamineNotes.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DeviceInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DringkingWaterSourceInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DrinkingWaterFactoryInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_DrinkWaterSamplingInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Examine.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_FuncitonNoisePointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_GasItem.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_GasPointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_GridInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LabMonitorItem.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LakeInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_LakeVerticaPointlInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Link.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaintainRecord.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialInventory.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialPurchase.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialPurchaseRecord.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Materials.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_MaterialUseRecord.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Module.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RainfallItem.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RainfallPointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_RiversInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Road.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_SeaWaterItem.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_SeaWaterPointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_SectionPointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Station.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_TrafficNoisePointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_Warehouse.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_WaterItem.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Bas_WaterSampling.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_CheckType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_ControlLevel.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_Function.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasItemType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasItemTypeRelevance.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasStandardLimit.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GasTimeTypes.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_GradeType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_LakeQualityStandard.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_LakeSampling.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_LinkRelevance.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_NoiseFunction.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_NoiseSource.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_PresentSituation.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_QualityLevel.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_RiverQualityStandard.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_SeaWaterFactorLimit.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_SeaWaterFunction.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterItemLimit.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterQuality.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterSourceType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterStandardLimit.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Code_WaterSystem.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_CalibrateRunType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_CONVENTIONRULEINFO.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_DeviceType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_DrinkingWaterType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_GasOriginStandard.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_LakeOriginStandard.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_MaterialModel.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_MaterialsType.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_NoiseDayAndNightInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_NoiseNetWokManageLevel.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_Region.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_RiverOriginStandard.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_SeaWaterOriginStandard.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_SoundSource.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Cod_StandardToLimit.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_DEPARTMENTINFO.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_ModuleOperation.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_OperationId.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_Role.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_RoleMoudule.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_RoleOperation.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_UserDept.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_UserRole.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Sys_Users.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\UserLoginModel.cs" />
+    <Compile Include="V_AQIDaySinglePoint.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_AQIReportData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DrinkingWaterFactoryInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DrinkingWaterSamplingInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DrinkingWaterSourceInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_FunctionNoisePointLinkRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_FunctionNoisePointRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasDayData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasHourData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasItemTypeAndRealTimeData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasItemTypeRelevance.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasMonitorYearResult.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasMonthData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasPointLinkStation.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasPointRealTimeData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GasPointStationRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GridNoisePointRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_ItemRealData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabAblumMessage.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentApproval.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentConfirm.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentCycles.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentExamineInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentProject.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabEquipmentRepairRequest.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMaterialApproval.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMaterialApprovalShow.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMaterialPurchase.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMaterialPurchaseRecord.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMaterialStock.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMaterialUseRecord.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LabMonitorItemInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LakeSamplingPoint.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LakeVerticaPointlInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LakeVerticaPointRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_MaintainRecordInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_MaterialInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NoiseCityAndRoadInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NoiseCityInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NoiseCityRangCountResult.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NoiseFunctionPointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NoiseGridInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NoiseRoadInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RainFallPointRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RainPointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RiverSamplingInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RiverSectionPointRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RiversInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_SeaWaterFunctionAreaInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_SeaWaterPointLinkStation.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_SelectAQIReportContains24HourData.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_StationLinkRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_TrafficNoisePointInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_TrafficNoisePointRegion.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_UserDeptRole.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_UserRightsView.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_WaterSectionInfo.cs">
+      <DependentUpon>DapperModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DapperModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DapperModel.Context.cs</LastGenOutput>
+      <DependentUpon>DapperModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DapperModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DapperModel.edmx</DependentUpon>
+      <LastGenOutput>DapperModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Entity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Entity1.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DapperModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DapperModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="DapperModel.edmx.diagram">
+      <DependentUpon>DapperModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

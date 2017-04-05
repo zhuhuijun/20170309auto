@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<configuration>
+
+
+<!-- 视图切换图标 -->
+	<TitlebarButton>
+		<envAssButtonURL tooltip="条件">assets/images/i_searchtext.png</envAssButtonURL>
+		<resultButtonURL tooltip="结果">assets/images/i_table.png</resultButtonURL>
+	</TitlebarButton>
+
+ <geometryServiceURL>http://yutu418/ArcGIS/rest/services/Geometry/GeometryServer</geometryServiceURL>
+<layers>
+  <layer>
+    <name index="1">教育科研</name>
+    <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/7</url>
+    <symbolURL fontSize="16">assets/images/yutu/school.gif</symbolURL>
+    <titlefield>NAME</titlefield>
+    <fields all="false">
+      <field name="NAME" alias="名称"/>
+    </fields>
+    <infoWindowShowField>
+      <node field="layerName" name="类别："/>
+    </infoWindowShowField>
+  </layer>
+  <layer>
+    <name index="2">医疗卫生</name>
+    <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/8</url>
+    <symbolURL fontSize="16">assets/images/yutu/hospital.gif</symbolURL>
+    <titlefield>NAME</titlefield>
+    <fields all="false">
+      <field name="NAME" alias="名称"/>
+    </fields>
+    <infoWindowShowField>
+      <node field="layerName" name="类别："/>
+    </infoWindowShowField>
+  </layer>
+  <layer>
+    <name index="3">居民小区村庄</name>
+    <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/10</url>
+    <symbolURL fontSize="16">assets/images/yutu/resiArea.gif</symbolURL>
+    <titlefield>NAME</titlefield>
+    <fields all="false">
+      <field name="NAME" alias="名称"/>
+    </fields>
+    <infoWindowShowField>
+      <node field="layerName" name="类别："/>
+    </infoWindowShowField>
+  </layer>
+  <layer>
+    <name index="7">党政机关</name>
+    <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/6</url>
+    <symbolURL fontSize="20">assets/images/yutu/school.gif</symbolURL>
+    <titlefield>NAME</titlefield>
+    <fields all="false">
+      <field name="NAME" alias="名称"/>
+    </fields>
+    <infoWindowShowField>
+      <node field="layerName" name="类别："/>
+    </infoWindowShowField>
+  </layer>
+</layers>
+<info>widgets/InfoTemplates/InfoPopupWidget.swf</info>
+<bufferRadius>1500</bufferRadius>
+
+<JSBufferUmpty2nd>LayerEventInfo2nd</JSBufferUmpty2nd>
+	
+<JSBufferUmpty>LayerEventInfo</JSBufferUmpty>
+
+	<bufferwidgets>
+		<widget name="search"/>
+		<widget name="AirModelBuffer"/>
+		<widget name="buffer"/>
+		<!--<widget name="dynamcBuffer"/>	-->
+		<!--<widget name="bufferUmpty"/>-->
+	</bufferwidgets>
+	
+	
+	<!--程序初始化时加载图例的图片   yangkai 20130218-->
+	<closedWidget>closedBufferUmptyWidget</closedWidget>  
+	
+	<!--<窗体关闭时隐藏图例的图片 yangkai 20130218	-->
+	<openWidget>openBufferUmptyWidget</openWidget>
+</configuration>

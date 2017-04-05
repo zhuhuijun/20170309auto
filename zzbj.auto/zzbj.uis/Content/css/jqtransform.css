@@ -1,0 +1,147 @@
+.aboxmanageform{
+	margin:1em 0;
+	padding-top:10px;
+}
+img 
+{
+   padding:0; 
+   border:0;
+   }
+.slider_close
+{
+    float: right;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    text-indent: -9999px;
+    background: url(images/bg_button_close.jpg) no-repeat;
+}
+.aboxmanageform input[type="text"], .aboxmanageform textarea,.aboxmanageform input[type="password"]{		
+	width:180px;
+	border:1px solid #ddd;
+	
+	padding:3px;
+}
+.aboxmanageform input[type="radio"]
+{
+    width:18px;
+	border:1px solid #ddd;
+	background:#fff url(images/form_input.gif) repeat-x;
+	padding:3px;
+    }	
+    	
+.aboxmanageform textarea
+{
+    width:97.4%;
+	height:125px;
+	overflow:auto;
+}
+		
+.clear {
+	clear: both;
+}
+.aboxmanageform {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:-10px;
+}
+
+.aboxmanageform tr
+{
+    margin-top:2px;
+    margin-bottom:2px;
+}
+.aboxmanageform td
+{
+    margin-right:2px;
+    margin-left:2px;
+    }
+.aboxmanageform select
+{
+    font-size:13px;
+    height:25px;
+    }
+body
+{
+    font-size: 12px;
+    font-family: ËÎÌå;
+}
+select
+{
+    font-size:12px;
+    height:23px;
+    }
+.aboxmanageform fieldset  
+{
+    border: 1px solid #ccc; 
+    margin-bottom: 8px; 
+    padding:4px 30px; 
+    padding-bottom:10px; 
+    text-align:center; 
+    }
+    
+.aboxmanageform legend {
+	font-weight:bold;
+	line-height:45px;
+	padding-left:60px;
+	color: #333;
+}
+.aboxmanageform table 
+{
+    text-align:left; 
+    color:#666; 
+    font-size:12px;
+    }
+    
+.item_title{
+    font-weight:700;
+    padding:10px 0 8px 0;
+    color:#555; 
+    vertical-align:top;
+    text-align:right;
+}
+
+.rowform 
+{
+    width:306px; 
+    overflow:auto; 
+    }
+    
+.vtop 
+{
+    vertical-align:top;
+    }
+    
+.aboxbtn{
+	border: 1px solid #999;
+	height: 26px;
+	font-family: "Î¢ÈíÑÅºÚ";
+	font-size: 14px;
+	padding-left: 30px;
+	padding-right: 15px;
+	background-color: #F2FADC;
+}
+
+#AdBox {
+	width: 100%;
+}
+#AdBox a {
+	font-size: 13px;
+	line-height: 24px;
+	color: #333;
+	text-decoration: none;
+}
+#AdBox_1 img {
+	border: 2px solid #CCC;
+	padding: 3px;
+}
+#AdBox_2 #flashattr {
+	padding-top: 5px;
+	padding-left: 5px;
+	font-size: 13px;
+	line-height: 24px;
+	color: #009;
+}

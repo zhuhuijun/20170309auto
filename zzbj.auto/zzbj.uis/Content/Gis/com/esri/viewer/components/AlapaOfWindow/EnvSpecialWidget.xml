@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!-- 列表显示专题 -->
+    <bookmarks>
+        <bookmark name="地表水功能区划" icon="assets/images/ItemCheckList/地表水功能区划_16.png" layerID = "面状功能区" url = ""></bookmark>
+        <bookmark name="饮用水源保护区" icon="assets/images/ItemCheckList/饮用水源保护区_16.png" layerID = "水源保护区" url = ""></bookmark>
+       
+        <bookmark name="取水口分布专题" icon="assets/images/ItemCheckList/取水口_16.png" layerID = "取水口" url = ""></bookmark>
+        <bookmark name="排污口分布专题" icon="assets/images/ItemCheckList/排污口_16.png" layerID = "排污口" url = ""></bookmark>
+        <bookmark name="饮用水监测断面" icon="assets/images/ItemCheckList/水质断面模型_16.png" layerID = "监测断面" url = "WaterQuality"></bookmark>
+        <bookmark name="水质自动监测" icon="assets/images/ItemCheckList/水质自动监测_16.png" layerID = "水质自动监测站" url = "WaterAutoMonitor"></bookmark>
+        <bookmark name="空气质量自动监测" icon="assets/images/ItemCheckList/空气自动监测_16.png" layerID = "空气自动监测站" url = "AirQuality"></bookmark>
+        <bookmark name="噪声自动监测" icon="assets/images/ItemCheckList/噪声监测16.png" layerID = "噪声自动监测站" url = "NoiseQuality"></bookmark>
+      
+        <bookmark name="放射源专题" icon="assets/images/ItemCheckList/放射源_16.png" layerID = "放射源企业" url = ""></bookmark>
+        <bookmark name="污水处理厂" icon="assets/images/ItemCheckList/污水处理厂16.png" layerID = "污水处理厂" url = ""></bookmark>
+        <bookmark name="垃圾处理厂" icon="assets/images/ItemCheckList/垃圾处理厂16.png" layerID = "垃圾处理厂" url = ""></bookmark>
+    </bookmarks>
+    
+    <!-- 空气监测站点弹出框内容 -->
+	<PopUpFieldsAir titleField="JCD_MC">
+		<PopUpField name="     API值: "        field="API"/>
+		<PopUpField name="     首要污染物: "    field="SYWRW"/>
+		<PopUpField name="     空气质量状况: "  field="BZ"/>
+		<PopUpField name="     空气质量级别: "  field="JB"/>
+	</PopUpFieldsAir>	
+	
+	<!-- 饮用水监测断面弹出框内容 -->
+	<PopUpFields titleField="JCD_MC">
+		<PopUpField name="     所属地区: "      field="XZQH_QU_MC"/>
+		<PopUpField name="     水质状况: "      field="Water_JB"/>
+		<PopUpField name="     主要污染物: "    field="ZYWRW"/>
+	</PopUpFields>	
+	
+	<!-- WebService数据交互连接地址-->
+	<httpServiceURL>http://yutu217/jjWebservice/Service.asmx?wsdl</httpServiceURL>
+	<!--<httpServiceURL>http://192.168.4.109:8080/MapWebservice/services/MapService?wsdl</httpServiceURL>-->
+	
+	<!-- 空气质量监控站点服务地址-->
+	<featureUrlAir>http://yutu418/ArcGIS/rest/services/jjmap/FeatureServer/7</featureUrlAir>
+	
+	<!-- 水质监测断面服务地址-->
+	<featureUrlDM>http://yutu418/ArcGIS/rest/services/jjmap/FeatureServer/5</featureUrlDM>
+	
+	<!-- 空气自动监测服务地址-->
+	<featureUrlWaterAuto>http://yutu418/ArcGIS/rest/services/jjmap/FeatureServer/8</featureUrlWaterAuto>
+	
+	<!-- 噪声自动监测服务地址-->
+	<featureUrlNoiseAuto>http://yutu418/ArcGIS/rest/services/jjmap/FeatureServer/17</featureUrlNoiseAuto>
+</configuration>

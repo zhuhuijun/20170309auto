@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<configuration>
+ <geometryServiceURL>http://yutu418/ArcGIS/rest/services/Geometry/GeometryServer</geometryServiceURL>
+  <layers>
+    <layer>
+      <name>风险源</name>
+      <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/34</url>
+      <expression>NAME LIKE '%[value]%'</expression>
+      <textsearchlabel>按 风险源 查询</textsearchlabel>
+      <graphicalsearchlabel>使用下面工具之一来选择 风险源：</graphicalsearchlabel>
+      <titlefield>NAME</titlefield>
+      <linkfield></linkfield>
+      <fields all="false">
+        <field name="NAME" alias="名称"/>
+      </fields>
+    </layer>
+    <layer>
+      <name>酒店宾馆</name>
+      <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/19</url>
+      <expression>NAME  LIKE '%[value]%'</expression>
+      <textsearchlabel>按 酒店宾馆 查询</textsearchlabel>
+      <graphicalsearchlabel>使用下面工具之一来选择 酒店宾馆：</graphicalsearchlabel>
+      <titlefield>NAME</titlefield>
+      <linkfield></linkfield>
+      <fields all="false">
+        <field name="NAME" alias="名称"/>
+      </fields>
+    </layer>
+    <layer>
+      <name>医疗卫生</name>
+      <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/8</url>
+      <expression>NAME  LIKE '%[value]%'</expression>
+      <textsearchlabel>按 医疗卫生 查询</textsearchlabel>
+      <graphicalsearchlabel>使用下面工具之一来选择 医疗卫生：</graphicalsearchlabel>
+      <titlefield>NAME</titlefield>
+      <linkfield></linkfield>
+      <fields all="false">
+        <field name="NAME" alias="名称"/>
+      </fields>
+    </layer>
+    <layer>
+      <name>居民小区村庄</name>
+      <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/10</url>
+      <expression>NAME LIKE '%[value]%'</expression>
+      <textsearchlabel>按 居民小区村庄 查询</textsearchlabel>
+      <graphicalsearchlabel>使用下面工具之一来选择 居民小区村庄：</graphicalsearchlabel>
+      <titlefield>NAME</titlefield>
+      <linkfield></linkfield>
+      <fields all="false">
+        <field name="NAME" alias="名称"/>
+      </fields>
+    </layer>
+    <layer>
+      <name>公共场所</name>
+      <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/20</url>
+      <expression>NAME LIKE '%[value]%'</expression>
+      <textsearchlabel>按 公共场所 查询</textsearchlabel>
+      <graphicalsearchlabel>使用下面工具之一来选择 公共场所：</graphicalsearchlabel>
+      <titlefield>NAME</titlefield>
+      <linkfield></linkfield>
+      <fields all="false">
+        <field name="NAME" alias="名称"/>
+      </fields>
+    </layer>
+    <layer>
+      <name>交通服务设施</name>
+      <url>http://yutu418/ArcGIS/rest/services/syMap_sl/MapServer/23</url>
+      <expression>NAME LIKE '%[value]%'</expression>
+      <textsearchlabel>按 交通服务设施 查询</textsearchlabel>
+      <graphicalsearchlabel>使用下面工具之一来选择 交通服务设施：</graphicalsearchlabel>
+      <titlefield>NAME</titlefield>
+      <linkfield></linkfield>
+      <fields all="false">
+        <field name="NAME" alias="名称"/>
+      </fields>
+    </layer>
+  </layers>
+  <zoomscale>300000</zoomscale>
+  <info>widgets/toolBar/InfoTemplates/InfoPopupWidget.swf</info>
+	<bufferRadius>10000</bufferRadius>
+	<searchzoomscale>5000000</searchzoomscale>
+</configuration>

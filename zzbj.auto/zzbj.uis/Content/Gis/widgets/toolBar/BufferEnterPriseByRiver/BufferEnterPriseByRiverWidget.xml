@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<configuration>
+     <mapConfig>
+      <identifytaskurl>http://yutu567/ArcGIS/rest/services/shenyang/hlzxx/MapServer</identifytaskurl><!--水图层所在的地址-->
+      <queryaskurl>http://yutu567/ArcGIS/rest/services/shenyang/hlzxx/MapServer/0</queryaskurl><!--查询的图层-->
+      <geometryServiceURL>http://yutu567/ArcGIS/rest/services/Geometry/GeometryServer</geometryServiceURL><!--调用的几何服务-->
+      <webserviceURL>http://yutu567/BufferByRiverService/Service.asmx?wsdl</webserviceURL><!--调用的webserver-->
+      <riverLayerID>0</riverLayerID><!--图层的序号-->
+      <info>widgets/toolBar/InfoTemplates/InfoPopupWidget.swf</info>
+      <imageMappoint>assets/images/i_draw_point.png</imageMappoint><!--绘制的点的符号-->
+      <imageURL>assets/images/yutu/enterprise.gif</imageURL><!--查询企业的符号-->
+      <urlFunction>BufferEnterPriseByRiver</urlFunction><!--外部调用flex内部的企业编号的方法 自己在js中定义-->
+       <poupWindowFunction>BufferEnterPriseshow</poupWindowFunction><!--外部调用弹出窗体的方法 自己在js中定义-->
+           <poupWindowFunction>BufferEnterPriseshow</poupWindowFunction>
+            <distance>5000</distance>
+    </mapConfig>
+   
+    </configuration>

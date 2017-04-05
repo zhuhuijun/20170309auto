@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using zzbj.ibll;
@@ -18,19 +19,28 @@ namespace zzbj.bll
             _repository = repository;
         }
 
-        public void Insert(custom c)
+        public bool Insert(custom c)
         {
-            _repository.Insert(c);
+            return _repository.Insert(c);
         }
 
-        public void Update(custom c)
+        public bool Update(custom c)
         {
-            _repository.Update(c);
+            return _repository.Update(c);
         }
 
-        public void Delete(custom c)
+        public bool Delete(custom c)
         {
-            _repository.Delete(c);
+           return _repository.Delete(c);
+        }
+        /// <summary>
+        /// 根据查询条件获取数据
+        /// </summary>
+        /// <param name="propertyExpr">查询条件</param>
+        /// <returns></returns>
+        public IList<custom> GetData(Expression<Func<custom, bool>> propertyExpr)
+        {
+            return _repository.GetData(propertyExpr);
         }
     }
 }

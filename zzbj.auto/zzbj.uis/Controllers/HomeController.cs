@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using zzbj.uis.Models;
 
 namespace zzbj.uis.Controllers
 {
@@ -12,19 +14,33 @@ namespace zzbj.uis.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        /// <summary>
+        /// 加载主模块的数据
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public string GetSysModule()
         {
-            ViewBag.Message = "Your application description page.";
+            //初始化系统基础数据
+            /*
+               //清空所有缓存
+               IDictionaryEnumerator cacheEnmu = HttpRuntime.Cache.GetEnumerator();
+               while (cacheEnmu.MoveNext())
+               {
+                   HttpRuntime.Cache.Remove(cacheEnmu.Key.ToString());
+               }
 
-            return View();
-        }
+               PublicMethod.LoadRegionCodeList();
+               PublicMethod.LoadLinkList();
+               PublicMethod.LoadCheckTypeList();
+               PublicMethod.LoadQualityLevelList();
+               PublicMethod.LoadControleList();
+               PublicMethod.LoadDepartment();
+               PublicMethod.LoadModule();
+               PublicMethod.LoadRole();
+               */
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return SysInitModels.GetMenuJsonStringResult();
         }
     }
 }

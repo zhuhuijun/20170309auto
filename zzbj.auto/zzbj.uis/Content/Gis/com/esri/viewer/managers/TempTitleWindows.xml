@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+//
+// Copyright © 2008 - 2009 ESRI
+//
+// All rights reserved under the copyright laws of the United States.
+// You may freely redistribute and use this software, with or
+// without modification, provided you include the original copyright
+// and use restrictions.  See use restrictions in the file:
+// <install location>/FlexViewer/License.txt
+//
+////////////////////////////////////////////////////////////////////////////////
+-->
+<configuration>
+ 	<regionNames>
+ 		<regionName name="TEXTLABEL" chinese="名称" order="1"/>
+ 		<regionName name="x" chinese="经度" order="2"/>
+ 		<regionName name="y" chinese="纬度" order="3"/>
+ 		<regionName name="ADDRESS" chinese="地址" order="4"/>
+ 		<regionName name="ADDRESS" chinese="地址" order="4"/>
+ 		<regionName name="ADDRESS" chinese="地址" order="4"/>
+ 	</regionNames>
+ 	<outName>
+ 		<outName name="TEXTLABEL"/>
+ 	</outName>
+</configuration>

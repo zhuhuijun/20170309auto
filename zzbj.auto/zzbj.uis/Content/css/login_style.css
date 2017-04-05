@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+html {
+	height:100%;
+	overflow:hidden;
+}
+body {
+	height:100%;
+	overflow:auto;
+	background:#93caef;
+	text-align:center;
+}
+
+/*登录页面css++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.login_bg  
+{
+  position: absolute;
+  width:895px;
+  height:454px;
+  left:50%;
+  top:50%;
+  margin-left:-450px;
+  margin-top:-227px;
+  background:url(images/login_bg.png) no-repeat;
+  }
+
+.form_pos { margin-left:400px; padding-top:305px;_padding-top:307px; position:relative;}
+.form_pos ul { margin-top:-100px; margin-left:170px; *margin-left:-115px;}
+.form_pos ul li { height:35px; text-align:left;}
+.user_txt { border:1px solid #c4c4c4; width:171px; height:30px; font-weight:bold;line-height:30px;}
+.test_txt { border:1px solid #c4c4c4; width:86px; height:30px; font-weight:bold;line-height:30px;}
+.btn_style { border:0px; cursor:pointer; background:url(images/btn_login.png) no-repeat; float:right;margin-right:30px; margin-top:-77px; width:95px; height:45px;}
+.test_pos { height:25px; vertical-align:bottom; margin-left:5px;}

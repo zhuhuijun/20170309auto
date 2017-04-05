@@ -1,8 +1,8 @@
 ﻿<#+
 	public class config
 	{		
-		public static readonly string ConnectionString="server=.;pwd=sa;uid=sa;database=dapper_test;";
-		public static readonly string DbDatabase="dapper_test";
+		public static readonly string ConnectionString="server=.;pwd=sa;uid=sa;database=DB_ZhouShan_DataBase;";
+		public static readonly string DbDatabase="DB_ZhouShan_DataBase";
 	}
 
 	public class DbHelper

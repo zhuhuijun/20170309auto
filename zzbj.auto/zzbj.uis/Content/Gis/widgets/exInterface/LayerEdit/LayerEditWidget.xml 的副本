@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+//
+//	梁子湖流域生态管理系统 - 中科宇图.环保事业部
+// 
+// 	图层编辑
+//
+////////////////////////////////////////////////////////////////////////////////
+-->
+<configuration>
+
+	<iconDynamicLabel>assets/yutuImages/mapIcon/pushpin_centered.png</iconDynamicLabel>	
+		
+	<editLayer>
+		<layer name="水生态监测站点" id="shuishengtai" itemId="水生态" 
+			   mapLabel="editLayer" layerName="水生态监测站点" 
+			   />
+		<layer name="污染源企业" id="wuranyuan" 
+			   mapLabel="editLayer" layerName="污染源企业" 
+			   />
+		<layer name="国控监测断面" id="guokongjianceduanmian" 
+			   mapLabel="editLayer" layerName="自然保护区" 
+			   />
+	</editLayer>
+	
+	<!-- 图层编辑字段 -->
+	<editField>
+		<shuishengtai>
+			<node name="名称: " field="name" />
+		</shuishengtai>
+		<wuranyuan>
+			<node name="企业名称: " field="EntName" />
+    		<node name="所在城市: " field="city " />
+		</wuranyuan>
+		<guokongjianceduanmian>
+			<node name="站点名称: " field="stationName" />
+		</guokongjianceduanmian>
+	</editField>
+		
+</configuration>

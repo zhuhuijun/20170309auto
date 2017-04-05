@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<configuration>
+<layers>
+    <layer>
+      <symbol typeName="风险源" symbolSize="20" url="assets/images/yutu/enterprise.gif" />
+    </layer>
+    <layer>
+      <symbol typeName="教育科研" symbolSize="20" url="assets/images/yutu/school.gif" />
+    </layer>
+    <layer>
+      <symbol typeName="医疗卫生" symbolSize="20" url="assets/images/yutu/hospital.gif" />
+    </layer>
+    <layer>
+      <symbol typeName="居民小区村庄" symbolSize="20" url="assets/images/yutu/resiArea.gif" />
+    </layer>
+</layers>
+</configuration>

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+//
+//	梁子湖流域生态管理系统 - 中科宇图.环保事业部
+// 
+// 	图层编辑
+//
+////////////////////////////////////////////////////////////////////////////////
+-->
+<configuration>
+
+	<iconDynamicLabel>assets/yutuImages/mapIcon/pushpin_centered.png</iconDynamicLabel>	
+		
+	<editLayer>
+		<layer name="北仑区生态环境功能分区图" id="shuishengtai"   url="http://localhost/ArcGIS/rest/services/blqEdit/MapServer/0"
+			   mapLabel="specialMap" layerName="北仑区生态环境功能分区图" 
+			   />
+	</editLayer>
+	
+	<!-- 图层编辑字段 -->
+	<editField>
+		<stgnq>
+			<node name="功能区名称: " field="功能区名称" />
+		</stgnq>		
+	</editField>
+		
+</configuration>

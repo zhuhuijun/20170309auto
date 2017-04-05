@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<configuration>
+
+
+
+<externalInterface>
+	
+		<!--  
+	
+			名称：外部通过js调用内部的服务专题
+	    	
+	    	接口：SpecialTopic
+	    	
+	    	参数：JsonData:Array (json格式的数组）
+	    	
+	    	数据结构：	[
+							{
+								
+								specialItem: {enable: name:_,    layerType:_,  layerLabel:_,  layerName:_,   layerNameField:_,   layerVisible:_ ,   layerAlpha:_,   iconUrl:_},
+								iframeWindow:{enable:_,  url:_,  width:_,  height:_},
+								legendPicture:{enable:_,  url:_,  width:_,  height:_},
+								clickCallback:{enable:_,  funcName:_,  parameter:[_,_...]}
+								
+							},
+							{
+								…
+							},
+							…
+						]
+
+
+	    	 <item name="生态保护地" 
+          layerType="feature" layerLabel="specialMap" layerName="生态保护地"
+          layerNameField="区域名称"
+          layerVisible="true" layerAlpha="0.75"
+          iconUrl="assets/images/0822/生态保护地.png"
+    		  />
+	    	数据说明：	参数采用 json 数据来传递。整个数据整体是一个数组。里面包含若干对象，每一对象代表一个点信息。 
+
+						specialItem： 图层的信息 里面的参数 
+	                                   name显示的图层名称（可以不是真实的地图服务的图层名称 暂时没有用途）；
+	                                   layerType       加载专题的图层名称， 默认要采用feature；
+	                                   layerLabel     关联的地图服务的name；
+	                                   layerName      专题对应的图层名称；
+	                                   layerNameField 鼠标移动到图形上后显示图形那个字段的值;
+	                                   layerVisible   图层默认是否可见；
+	                                   layerAlpha     默认图层的透明度；
+	                                   iconUrl        默认图层的图片 (暂时没有用途)；
+
+					    iframeWindow：弹出的气泡框内嵌入外部页面。
+					                  enable     为决定是否要使用此功能，
+					                  url        为页面地址；
+					                  width      页面的宽度；
+					                  height     页面的高度； 
+					                 //autoShow  为是否要在加载时自动显示。
+						
+						clickCallback：点击图标时向外派发事件，
+						             enable         为决定是否要使用此功能，
+						             funcName       为要调用的外部函数名称。
+						             parameter      为掉用外部函数时要传的参数，程序在调用外部函数时会传两个参数，一个是将该点对象传入时的所有参数以json格式原样传回，另一个是parameter传的参数。 
+						             	             
+								    				
+	    	示例：  
+	    	
+	    		//噪声国控监测道路  包含环城路、快速路、主干道
+			//[{"clickCallback":{"parameter":["fdfdfd",3],"enable":false,"funcName":"yutu"},"iframeWindow":{"url":"http://www.sina.com.cn","width":200,"enable":true,"height":200},"specialItem":{"layerName":"环城路","layerNameField":"FID","layerAlpha":0.75,"iconUrl":"assets/yutuImages/mapIcon/point_red_big.png","layerVisible":true,"name":"环城路","layerLabel":"specialServiceMap","layerType":"feature"}},{"clickCallback":{"parameter":["fdfdfd",3],"enable":false,"funcName":"yutu"},"iframeWindow":{"url":"http://www.sina.com.cn","width":200,"enable":true,"height":200},"specialItem":{"layerName":"快速路","layerNameField":"FID","layerAlpha":0.75,"iconUrl":"assets/yutuImages/mapIcon/point_red_big.png","layerVisible":true,"name":"快速路","layerLabel":"specialServiceMap","layerType":"feature"}},{"clickCallback":{"parameter":["fdfdfd",3],"enable":false,"funcName":"yutu"},"iframeWindow":{"url":"http://www.sina.com.cn","width":200,"enable":true,"height":200},"specialItem":{"layerName":"主干道","layerNameField":"FID","layerAlpha":0.75,"iconUrl":"assets/yutuImages/mapIcon/point_red_big.png","layerVisible":true,"name":"主干道","layerLabel":"specialServiceMap","layerType":"feature"}}]
+			
+			//国控网格区域环境噪声声级分布
+			//[{"specialItem":{"layerLabel":"specialServiceMap","iconUrl":"assets/yutuImages/mapIcon/point_blue_big.png","layerType":"feature","layerName":"国控网格区域环境噪声声级分布","layerNameField":"国控编码","layerAlpha":0.7,"name":"国控网格区域环境噪声声级分布","layerVisible":true},"clickCallback":{"parameter":["fdfdfd",4],"funcName":"yutu","enable":false},"iframeWindow":{"url":"http://www.hao123.com","width":400,"height":400,"enable":true}}]
+			
+			
+			//噪声声级分布
+			//[{"clickCallback":{"parameter":["fdfdfd",4],"funcName":"yutu","enable":false},"specialItem":{"layerLabel":"specialServiceMap","layerNameField":"OBJECTID","layerType":"feature","name":"噪声声级分布","layerName":"噪声声级分布","layerVisible":true,"iconUrl":"assets/yutuImages/mapIcon/point_blue_big.png","layerAlpha":0.7},"iframeWindow":{"enable":true,"width":400,"height":400,"url":"http://www.hao123.com"}}]
+			
+			
+			//国控网格区域
+			//<exAddPointList>SpecialTopic</exAddPointList>
+	    	
+		 	备注：	
+		 	
+		-->
+
+	 <exItemSelect>exItemSelect</exItemSelect>  <!--添加专题图-->
+	 
+    <exItemClear>exItemClear</exItemClear>  <!--清除专题图-->
+    
+    
+		
+		
+
+		
+	</externalInterface>
+	
+
+	<widgetTemplate width="370" height="250" />  <!--控制控件的高度 暂时不需要-->
+		
+    
+       <specialMapServer  type="dynamic" visible="false" name="specialServiceMap"
+                   url="http://Lild-PC/ArcGIS/rest/services/Zhoushan/MapServer"
+                   />     <!--专题图对应的地图服务的地址-->
+
+  
+</configuration>
+
+
+
+
+
+
+

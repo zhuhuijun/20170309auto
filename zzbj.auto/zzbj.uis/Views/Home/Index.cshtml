@@ -1,31 +1,77 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = null;
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>浙江舟山海洋生态环境监测中心系统项目</title>
+    <meta name="Keywords" content="浙江舟山海洋生态环境监测中心系统" />
+    <meta name="description" content="浙江舟山海洋生态环境监测中心系统项目-中科宇图天下科技有限公司承建" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--jqueryui 样式-->
+    <link href="@Url.Content("~/Content/css/jquery-ui-1.8.24.custom.css")" rel="stylesheet" type="text/css" />
+    <!--主模块 样式-->
+    <link href="@Url.Content("~/Content/css/main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/themesetting.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/skins/black.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/powerFloat.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/smartMenu.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/jquery-1.8.2.min.js")"></script>
+    @*锁屏*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.blockUI.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/jquery-powerFloat-min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/jquery-smartMenu-min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/jquery-class.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/artDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/iframeTools.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/jquery-ui-1.8.24.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/interface.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/bsv1.3-core.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jScroll/jquery.nicescroll.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/FloatWindowMessage.js")"></script>
+    <!--[if lt IE 7]>
+            <style type="text/css">
+                div, img { behavior: url(js/iepngfix.htc) }
+            </style>
+        <![endif]-->
+</head>
+<body>
+    <!--系统主题设置-->
+    <div id="themeSetting_wrap" style="display: none;">
+        <div id="themeSetting_head" class="themeSetting_head">
+            <div id="themeSetting_tabTheme" class="themeSetting_tab current" style="display: block;">
+                系统主题
+            </div>
+        </div>
+        <div id="themeSetting_body" class="themeSetting_body">
+            <div id="themeSetting_area" class="themeSetting_area" style="display: block;">
+                <a href="###" themeid="theme_blue" class="themeSetting_settingButton" id="themeSetting_theme_blue">
+                    <div style="background: url(http://www.jq-school.com/upload/bg/icon/theme_blue.jpg) no-repeat;"
+                         class="themeSetting_settingButton_icon">
+                    </div>
+                    <div class="themeSetting_settingButton_text">
+                        梦幻光影
+                    </div>
+                </a>
+            </div>
+            <div id="themeSetting_wallpaper" class="themeSetting_wallpaper" style="display: none;">
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!--End-->
+    <!--设置登录状态信息-->
+    <div class="abs" id="bar_top">
+        <span class="float_left" id="clock">显示的时间</span> <span class="float_right" id="user">
+            @*欢迎您 【@Context.User.Identity.Name.Split('|')[1]】*@
+        </span>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <!--End-->
+    <!--背景图片设置-->
+    <div id="zoomWallpaperGrid" class="zoomWallpaperGrid" style="position: absolute;
+        z-index: -10; left: 0pt; top: 0pt; overflow: hidden; height: 381px; width: 1440px;">
+        <img id="zoomWallpaper" class="zoomWallpaper" style="position: absolute; top: 0pt; left: 0pt; height: 381px; width: 1440px;" src="@Url.Content("~/Content/ModulesImages/wallpaper.jpg")">
     </div>
-</div>
+    <!--End-->
+</body>
+</html>
