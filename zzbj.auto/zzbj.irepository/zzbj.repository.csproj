@@ -57,6 +57,10 @@
       <Project>{a77c1f80-3c79-4f56-818c-f06328886701}</Project>
       <Name>zzbj.idal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zzbj.models\zzbj.models.csproj">
+      <Project>{7d18b23e-0c80-4222-9326-8437baacc1c0}</Project>
+      <Name>zzbj.models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

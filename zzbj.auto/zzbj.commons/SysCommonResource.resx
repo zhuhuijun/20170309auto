@@ -180,4 +180,67 @@
   <data name="DataApplayingMsg" xml:space="preserve">
     <value>数据处于审核中，无法删除！</value>
   </data>
+  <data name="AddError" xml:space="preserve">
+    <value>数据添加失败,请联系管理员!</value>
+    <comment>添加失败</comment>
+  </data>
+  <data name="AddSuccess" xml:space="preserve">
+    <value>恭喜你,数据添加成功!</value>
+    <comment>添加成功</comment>
+  </data>
+  <data name="DelError" xml:space="preserve">
+    <value>数据删除失败,请联系管理员!</value>
+  </data>
+  <data name="DelSuccess" xml:space="preserve">
+    <value>恭喜你,数据删除成功!</value>
+  </data>
+  <data name="EditError" xml:space="preserve">
+    <value>数据修改失败,请联系管理员!</value>
+    <comment>修改失败</comment>
+  </data>
+  <data name="EditSuccess" xml:space="preserve">
+    <value>恭喜你,数据修改成功!</value>
+    <comment>修改成功</comment>
+  </data>
+  <data name="LoginErrorUserNameOrPassword1" xml:space="preserve">
+    <value>用户名或者密码错误!</value>
+  </data>
+  <data name="MenuActionError" xml:space="preserve">
+    <value>很遗憾,菜单与行为绑定失败!</value>
+  </data>
+  <data name="MenuActionSuccess" xml:space="preserve">
+    <value>恭喜你,菜单与行为绑定成功!</value>
+  </data>
+  <data name="MenuLink" xml:space="preserve">
+    <value>尚有关联的子级,无法删除数据!</value>
+  </data>
+  <data name="MenuLinkFlag" xml:space="preserve">
+    <value>11-003</value>
+    <comment>数据存在关联</comment>
+  </data>
+  <data name="OptionSuccess" xml:space="preserve">
+    <value>11-001</value>
+    <comment>操作成功</comment>
+  </data>
+  <data name="ParaErrorDesc" xml:space="preserve">
+    <value>参数错误,请重新提交!</value>
+  </data>
+  <data name="ParaErrorFlag" xml:space="preserve">
+    <value>11-002</value>
+    <comment>参数错误</comment>
+  </data>
+  <data name="RoleMenuError" xml:space="preserve">
+    <value>很遗憾,当前角色的菜单设置失败!</value>
+  </data>
+  <data name="RoleMenuSuccess" xml:space="preserve">
+    <value>恭喜你,当前角色的菜单设置成功!</value>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>11-004</value>
+    <comment>失败</comment>
+  </data>
+  <data name="UserLink" xml:space="preserve">
+    <value>此角色尚有关联的用户,无法进行删除操作!</value>
+    <comment>删除角色时的提示</comment>
+  </data>
 </root>

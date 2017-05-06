@@ -49,6 +49,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="BllTemplate1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="customBll.cs" />
     <Compile Include="personBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -343,7 +348,7 @@
   <ItemGroup>
     <Content Include="BllTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BllTemplate.cs</LastGenOutput>
+      <LastGenOutput>BllTemplate1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

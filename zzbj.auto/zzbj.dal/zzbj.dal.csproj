@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\System.Linq.Dynamic\System.Linq.Dynamic.csproj">
+      <Project>{eca1151a-18f1-4170-b435-801d3069932a}</Project>
+      <Name>System.Linq.Dynamic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zzbj.commons\zzbj.commons.csproj">
       <Project>{becafba4-29b5-4371-9e15-069c08845dcd}</Project>
       <Name>zzbj.commons</Name>

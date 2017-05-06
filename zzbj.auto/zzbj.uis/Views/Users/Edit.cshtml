@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model zzbj.models.T_Sys_Users
+<div>
+    <form id="formui">
+        <div class="aboxmanageform" >
+            @Html.HiddenFor(model => model.UserId)
+            <fieldset>
+                <legend style="background: url(/Content/css/images/legendimg.jpg) no-repeat;">
+                    用户基本信息
+                </legend>
+                <table width="100%">
+                    <tr>
+                        <td class="item_title">
+                            用户名称：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.UserName, new Dictionary<string, object>() { { "data-bvalidator", "required" } })
+                        </td>
+                        <td class="item_title">
+                            真实姓名：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.RealName, new Dictionary<string, object>() { { "data-bvalidator", "required" } })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            联系电话：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Tel, new Dictionary<string, object>() { { "data-bvalidator", "required,phone" } })
+                        </td>
+                        <td class="item_title">
+                            邮箱：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Email, new Dictionary<string, object>() { { "data-bvalidator", "required,email" } })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            创建日期：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.CreateDate, new { @class = "Wdate", onfocus = "WdatePicker({dateFmt:'yyyy/MM/d HH:mm:ss',isShowClear:false,readOnly:true})", style = " width:180px" })
+                        </td>
+                        <td class="item_title"></td>
+                        @* @Html.HiddenFor(model => model.UserRoleId)*@
+                        <td></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </form>
+</div>

@@ -61,6 +61,24 @@ namespace zzbj.commons {
         }
         
         /// <summary>
+        ///   查找类似 数据添加失败,请联系管理员! 的本地化字符串。
+        /// </summary>
+        public static string AddError {
+            get {
+                return ResourceManager.GetString("AddError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 恭喜你,数据添加成功! 的本地化字符串。
+        /// </summary>
+        public static string AddSuccess {
+            get {
+                return ResourceManager.GetString("AddSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 数据处于审核中，无法删除！ 的本地化字符串。
         /// </summary>
         public static string DataApplayingMsg {
@@ -88,6 +106,15 @@ namespace zzbj.commons {
         }
         
         /// <summary>
+        ///   查找类似 数据删除失败,请联系管理员! 的本地化字符串。
+        /// </summary>
+        public static string DelError {
+            get {
+                return ResourceManager.GetString("DelError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 信息删除后无法恢复，确认删除吗？ 的本地化字符串。
         /// </summary>
         public static string DeleteComfimMsg {
@@ -111,6 +138,33 @@ namespace zzbj.commons {
         public static string DeleteSuccesMsg {
             get {
                 return ResourceManager.GetString("DeleteSuccesMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 恭喜你,数据删除成功! 的本地化字符串。
+        /// </summary>
+        public static string DelSuccess {
+            get {
+                return ResourceManager.GetString("DelSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 数据修改失败,请联系管理员! 的本地化字符串。
+        /// </summary>
+        public static string EditError {
+            get {
+                return ResourceManager.GetString("EditError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 恭喜你,数据修改成功! 的本地化字符串。
+        /// </summary>
+        public static string EditSuccess {
+            get {
+                return ResourceManager.GetString("EditSuccess", resourceCulture);
             }
         }
         
@@ -196,11 +250,56 @@ namespace zzbj.commons {
         }
         
         /// <summary>
+        ///   查找类似 用户名或者密码错误! 的本地化字符串。
+        /// </summary>
+        public static string LoginErrorUserNameOrPassword1 {
+            get {
+                return ResourceManager.GetString("LoginErrorUserNameOrPassword1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 对不起，请输入正确的验证码！ 的本地化字符串。
         /// </summary>
         public static string LoginOther {
             get {
                 return ResourceManager.GetString("LoginOther", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 很遗憾,菜单与行为绑定失败! 的本地化字符串。
+        /// </summary>
+        public static string MenuActionError {
+            get {
+                return ResourceManager.GetString("MenuActionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 恭喜你,菜单与行为绑定成功! 的本地化字符串。
+        /// </summary>
+        public static string MenuActionSuccess {
+            get {
+                return ResourceManager.GetString("MenuActionSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 尚有关联的子级,无法删除数据! 的本地化字符串。
+        /// </summary>
+        public static string MenuLink {
+            get {
+                return ResourceManager.GetString("MenuLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 11-003 的本地化字符串。
+        /// </summary>
+        public static string MenuLinkFlag {
+            get {
+                return ResourceManager.GetString("MenuLinkFlag", resourceCulture);
             }
         }
         
@@ -223,6 +322,33 @@ namespace zzbj.commons {
         }
         
         /// <summary>
+        ///   查找类似 11-001 的本地化字符串。
+        /// </summary>
+        public static string OptionSuccess {
+            get {
+                return ResourceManager.GetString("OptionSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 参数错误,请重新提交! 的本地化字符串。
+        /// </summary>
+        public static string ParaErrorDesc {
+            get {
+                return ResourceManager.GetString("ParaErrorDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 11-002 的本地化字符串。
+        /// </summary>
+        public static string ParaErrorFlag {
+            get {
+                return ResourceManager.GetString("ParaErrorFlag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 对不起，您输入的密码有误！ 的本地化字符串。
         /// </summary>
         public static string PassWordErrorMsg {
@@ -232,11 +358,47 @@ namespace zzbj.commons {
         }
         
         /// <summary>
+        ///   查找类似 很遗憾,当前角色的菜单设置失败! 的本地化字符串。
+        /// </summary>
+        public static string RoleMenuError {
+            get {
+                return ResourceManager.GetString("RoleMenuError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 恭喜你,当前角色的菜单设置成功! 的本地化字符串。
+        /// </summary>
+        public static string RoleMenuSuccess {
+            get {
+                return ResourceManager.GetString("RoleMenuSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 11-004 的本地化字符串。
+        /// </summary>
+        public static string ServerError {
+            get {
+                return ResourceManager.GetString("ServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 系统初始化完成…… 的本地化字符串。
         /// </summary>
         public static string SysInitializeMsg {
             get {
                 return ResourceManager.GetString("SysInitializeMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 此角色尚有关联的用户,无法进行删除操作! 的本地化字符串。
+        /// </summary>
+        public static string UserLink {
+            get {
+                return ResourceManager.GetString("UserLink", resourceCulture);
             }
         }
         

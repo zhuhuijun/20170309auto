@@ -80,7 +80,7 @@ select
     margin-bottom: 8px; 
     padding:4px 30px; 
     padding-bottom:10px; 
-    text-align:center; 
+    /*text-align:center*/; 
     }
     
 .aboxmanageform legend {

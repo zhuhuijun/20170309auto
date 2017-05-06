@@ -83,6 +83,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -203,11 +204,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CustomManageController.cs" />
+    <Compile Include="Controllers\DepartMentInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\GridSettings.cs" />
     <Compile Include="Models\SysInitModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1595,6 +1599,60 @@
     <Content Include="Scripts\ImportExcel\ImportSurficeWaterData.js" />
     <Content Include="Scripts\ImportExcel\ImportUserData.js" />
     <Content Include="Scripts\ImportExcel\StandardSeaData.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-da.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-hr.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-hr1250.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-id.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-kr.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-mne.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-tw.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\jqGrid2\i18n\grid.locale-vi.js" />
+    <Content Include="Scripts\jqGrid2\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jqGrid2\jquery.jqGrid.src.js" />
+    <Content Include="Scripts\jqGrid2\plugins\grid.addons.js" />
+    <Content Include="Scripts\jqGrid2\plugins\grid.postext.js" />
+    <Content Include="Scripts\jqGrid2\plugins\grid.setcolumns.js" />
+    <Content Include="Scripts\jqGrid2\plugins\jquery.contextmenu.js" />
+    <Content Include="Scripts\jqGrid2\plugins\jquery.searchFilter.js" />
+    <Content Include="Scripts\jqGrid2\plugins\jquery.tablednd.js" />
+    <Content Include="Scripts\jqGrid2\plugins\searchFilter.css" />
+    <Content Include="Scripts\jqGrid2\plugins\ui.multiselect.css" />
+    <Content Include="Scripts\jqGrid2\plugins\ui.multiselect.js" />
     <Content Include="Scripts\jqGrid\i18n\grid.locale-ar.js" />
     <Content Include="Scripts\jqGrid\i18n\grid.locale-bg.js" />
     <Content Include="Scripts\jqGrid\i18n\grid.locale-bg1251.js" />
@@ -1670,6 +1728,13 @@
     <Content Include="Scripts\js\jquery-smartMenu-min.js" />
     <Content Include="Scripts\js\jquery-ui-1.8.24.custom.min.js" />
     <Content Include="Scripts\js\load-webos.js" />
+    <Content Include="Scripts\js\skins\icons\error.png" />
+    <Content Include="Scripts\js\skins\icons\face-sad.png" />
+    <Content Include="Scripts\js\skins\icons\face-smile.png" />
+    <Content Include="Scripts\js\skins\icons\loading.gif" />
+    <Content Include="Scripts\js\skins\icons\question.png" />
+    <Content Include="Scripts\js\skins\icons\succeed.png" />
+    <Content Include="Scripts\js\skins\icons\warning.png" />
     <Content Include="Scripts\LoginPage.js" />
     <Content Include="Scripts\MenuFunction.js" />
     <Content Include="Scripts\MicrosoftAjax.debug.js" />
@@ -1706,6 +1771,7 @@
     <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
     <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\myjs\commoncrud.js" />
     <Content Include="Scripts\ReportSreach\ReportSreach.js" />
     <Content Include="Scripts\ReportSreach\SpaceJs.js" />
     <Content Include="Scripts\TreeHepler.js" />
@@ -1773,6 +1839,10 @@
     <Content Include="RemoteHandlers\Upload.ashx" />
     <Content Include="RemoteHandlers\UploadFiles.ashx" />
     <Content Include="RemoteHandlers\ValidationCode.ashx" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\DepartMentInfo\Index.cshtml" />
+    <Content Include="Views\Users\Add.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\System.Linq.Dynamic\System.Linq.Dynamic.csproj">

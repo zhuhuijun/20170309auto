@@ -16,13 +16,12 @@ using zzbj.models;
 
 namespace zzbj.ibll
 {
-	/// <summary>
-	/// IT_Sys_UsersBll
-	/// </summary>	
-	public interface  IT_Sys_UsersBll:IDependency<T_Sys_Users>
+    /// <summary>
+    /// IT_Sys_UsersBll
+    /// </summary>	
+    public interface IT_Sys_UsersBll : IDependency<T_Sys_Users>
     {
-
-
+       
     }
 }
 

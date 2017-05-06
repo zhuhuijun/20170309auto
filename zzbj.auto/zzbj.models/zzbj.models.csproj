@@ -339,6 +339,9 @@
     <Compile Include="T_Sys_Users.cs">
       <DependentUpon>DapperModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CommonSearchModel.cs" />
+    <Compile Include="ViewModels\CRUDModel.cs" />
+    <Compile Include="ViewModels\PageDataView.cs" />
     <Compile Include="ViewModels\UserLoginModel.cs" />
     <Compile Include="V_AQIDaySinglePoint.cs">
       <DependentUpon>DapperModel.tt</DependentUpon>
@@ -546,6 +549,12 @@
       <DependentUpon>DapperModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zzbj.resources\zzbj.resources.csproj">
+      <Project>{ac03eaeb-3ce7-49b3-8080-5dd8a554c908}</Project>
+      <Name>zzbj.resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
