@@ -34,7 +34,16 @@
       <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,9 +64,20 @@
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="customBll.cs" />
+    <Compile Include="extend\rel_menuactionsBll_extend.cs" />
     <Compile Include="personBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicMethod.cs" />
+    <Compile Include="rel_menuactionsBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="SysDataHelper.cs" />
+    <Compile Include="sys_actionBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sys_roleBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="T_Bas_ApplyServiceBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
@@ -355,6 +375,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

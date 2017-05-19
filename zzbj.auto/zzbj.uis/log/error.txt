@@ -220,3 +220,138 @@
 异常名称：System.Core
 堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
    在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 26
+2017-05-06 13:58:56,419 ERROR zzbj.commons.CommonGlobal - 异常消息：No property or field 'UserId' exists in type 'sys_action'
+异常名称：zzbj.dal
+堆栈信息：   在 zzbj.dal.Dal`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.dal\Dal.cs:行号 223
+   在 zzbj.repository.Repository`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 102
+   在 zzbj.bll.SysDataHelper`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 97
+2017-05-06 13:59:06,965 ERROR zzbj.commons.CommonGlobal - 异常消息：No property or field 'UserId' exists in type 'sys_action'
+异常名称：zzbj.dal
+堆栈信息：   在 zzbj.dal.Dal`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.dal\Dal.cs:行号 223
+   在 zzbj.repository.Repository`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 102
+   在 zzbj.bll.SysDataHelper`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 97
+2017-05-06 13:59:13,014 ERROR zzbj.commons.CommonGlobal - 异常消息：No property or field 'UserId' exists in type 'sys_action'
+异常名称：zzbj.dal
+堆栈信息：   在 zzbj.dal.Dal`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.dal\Dal.cs:行号 223
+   在 zzbj.repository.Repository`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 102
+   在 zzbj.bll.SysDataHelper`1.FindDataByPageFilter(List`1 queryParas, String sortKey, Int32 pageNumber, Int32 pageSize, Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 97
+2017-05-09 15:44:52,866 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:44:52,915 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:45:54,517 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:45:54,539 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:46:31,001 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:46:31,037 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:46:47,773 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:46:47,791 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:47:09,065 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:47:09,091 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:48:10,697 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:48:10,717 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:48:41,705 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:48:41,716 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:50:48,866 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:50:48,892 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:53:16,578 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:53:16,600 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:55:07,602 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:55:07,622 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:55:52,592 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:55:52,592 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: predicate
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 zzbj.repository.Repository`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.irepository\Repository.cs:行号 54
+2017-05-09 15:55:52,623 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49
+2017-05-09 15:55:52,623 ERROR zzbj.commons.CommonGlobal - 异常消息：值不能为 null。
+参数名: source
+异常名称：System.Core
+堆栈信息：   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 zzbj.bll.SysDataHelper`1.GetData(Expression`1 propertyExpr) 位置 F:\baseframe\myauto\zzbj.auto\zzbj.bll\SysDataHelper.cs:行号 49

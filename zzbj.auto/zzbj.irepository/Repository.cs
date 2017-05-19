@@ -17,6 +17,14 @@ namespace zzbj.repository
         {
             _dal = dal;
         }
+        /// <summary>
+        /// 获得数据库的上下文
+        /// </summary>
+        /// <returns></returns>
+        public dapper_testEntities GetDb()
+        {
+           return _dal.GetDb();
+        }
 
         public bool Insert(T entity)
         {
@@ -51,7 +59,14 @@ namespace zzbj.repository
         {
             try
             {
-                return _dal.FindAllData().Where(propertyExpr).ToList();
+                if (propertyExpr == null)
+                {
+                    return _dal.FindAllData().ToList();
+                }
+                else
+                {
+                    return _dal.FindAllData().Where(propertyExpr).ToList();
+                }
             }
             catch (Exception ex)
             {

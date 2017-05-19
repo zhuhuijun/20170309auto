@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model zzbj.models.sys_action
+<div>
+    <form id="formui">
+        <div class="aboxmanageform" >
+            <fieldset>
+                <legend style="background: url(/Content/css/images/legendimg.jpg) no-repeat;">
+                    按钮基本信息
+                </legend>
+                <table width="100%">
+                    <tr>
+                        <td class="item_title">
+                           行为代码：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.actioncode, new Dictionary<string, object>() { { "data-bvalidator", "required" } })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="item_title">
+                            行为名称：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.actionname, new Dictionary<string, object>() { { "data-bvalidator", "required" } })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            创建日期：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.createtime, new { @class = "Wdate", onfocus = "WdatePicker({dateFmt:'yyyy/MM/d HH:mm:ss',isShowClear:false,readOnly:true})", style = " width:180px" })
+                        </td>
+                       
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </form>
+</div>

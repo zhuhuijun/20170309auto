@@ -41,7 +41,7 @@ namespace zzbj.bll
         /// </summary>
         /// <param name="propertyExpr">查询条件</param>
         /// <returns></returns>
-        public static IList<Tentity> GetData(Expression<Func<Tentity, bool>> propertyExpr)
+        public static IList<Tentity> GetData(Expression<Func<Tentity, bool>> propertyExpr=null)
         {
             try
             {

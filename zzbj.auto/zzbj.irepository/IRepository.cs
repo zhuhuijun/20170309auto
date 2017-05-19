@@ -10,6 +10,11 @@ namespace zzbj.repository
 {
     public interface IRepository<Tentity> where Tentity : class
     {
+        /// <summary>
+        /// 获得数据库的上下文
+        /// </summary>
+        /// <returns></returns>
+        dapper_testEntities GetDb();
         bool Insert(Tentity entity);
         bool Update(Tentity entity);
         bool Delete(Tentity entity);

@@ -16,6 +16,15 @@ namespace zzbj.dal
     public class Dal<T> : IDal<T> where T : class
     {
         private dapper_testEntities _mDbContext = new dapper_testEntities();
+        /// <summary>
+        /// 获得数据库的上下文
+        /// </summary>
+        /// <returns></returns>
+        public dapper_testEntities GetDb()
+        {
+            return _mDbContext;
+        }
+
         public bool Insert(T entity)
         {
             _mDbContext.Set<T>().Add(entity);

@@ -10,6 +10,7 @@ namespace zzbj.idal
 {
     public interface IDal<TEntity> where TEntity : class
     {
+        dapper_testEntities GetDb();
         bool Insert(TEntity entity);
         bool Update(TEntity entity);
         bool Delete(TEntity entity);

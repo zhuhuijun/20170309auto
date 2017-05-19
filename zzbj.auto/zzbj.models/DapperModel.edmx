@@ -5,6 +5,33 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="dapper_testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="rel_menuactions">
+          <Key>
+            <PropertyRef Name="menuid" />
+            <PropertyRef Name="actionid" />
+          </Key>
+          <Property Name="menuid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="actionid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isuse" Type="bit" />
+        </EntityType>
+        <EntityType Name="sys_action">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="actioncode" Type="nvarchar" MaxLength="50" />
+          <Property Name="actionname" Type="nvarchar" MaxLength="50" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sys_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="rowname" Type="nvarchar" MaxLength="50" />
+          <Property Name="createtime" Type="datetime" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="T_Bas_ApplyService">
           <Key>
             <PropertyRef Name="ApplyServiceCode" />
@@ -2173,16 +2200,6 @@
           <Property Name="Remarks" Type="text" />
         </EntityType>
         <!--生成过程中发现错误:
-警告 6013: 表/视图“DB_ZhouShan_DataBase.dbo.V_ModuleAndOperation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="V_ModuleAndOperation">
-          <Property Name="MouduleName" Type="varchar" MaxLength="100" />
-          <Property Name="ParentID" Type="int" />
-          <Property Name="OrderID" Type="int" />
-          <Property Name="ModuleId" Type="int" />
-          <Property Name="OperationId" Type="uniqueidentifier" />
-          <Property Name="OperationName" Type="varchar" MaxLength="200" />
-        </EntityType>-->
-        <!--生成过程中发现错误:
 警告 6002: 表/视图“DB_ZhouShan_DataBase.dbo.V_NoiseCityAndRoadInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="V_NoiseCityAndRoadInfo">
           <Key>
@@ -2678,6 +2695,9 @@
           <Property Name="DMCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="dapper_testModelStoreContainer">
+          <EntitySet Name="rel_menuactions" EntityType="Self.rel_menuactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sys_action" EntityType="Self.sys_action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sys_role" EntityType="Self.sys_role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Bas_ApplyService" EntityType="Self.T_Bas_ApplyService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Bas_CalibrateParameter" EntityType="Self.T_Bas_CalibrateParameter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Bas_City" EntityType="Self.T_Bas_City" Schema="dbo" store:Type="Tables" />
@@ -4073,6 +4093,9 @@
           <EntitySet Name="V_UserDeptRole" EntityType="dapper_testModel.V_UserDeptRole" />
           <EntitySet Name="V_UserRightsView" EntityType="dapper_testModel.V_UserRightsView" />
           <EntitySet Name="V_WaterSectionInfo" EntityType="dapper_testModel.V_WaterSectionInfo" />
+          <EntitySet Name="sys_action" EntityType="dapper_testModel.sys_action" />
+          <EntitySet Name="sys_role" EntityType="dapper_testModel.sys_role" />
+          <EntitySet Name="rel_menuactions" EntityType="dapper_testModel.rel_menuactions" />
         </EntityContainer>
         <EntityType Name="T_Bas_ApplyService">
           <Key>
@@ -6617,6 +6640,33 @@
           <Property Name="RiversID" Type="Int32" Nullable="false" />
           <Property Name="WaterQualityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DMCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sys_action">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="actioncode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="actionname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="sys_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rowname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+          <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="rel_menuactions">
+          <Key>
+            <PropertyRef Name="menuid" />
+            <PropertyRef Name="actionid" />
+          </Key>
+          <Property Name="menuid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="actionid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isuse" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -9208,6 +9258,35 @@
                 <ScalarProperty Name="StaionCode" ColumnName="StaionCode" />
                 <ScalarProperty Name="SectionPointName" ColumnName="SectionPointName" />
                 <ScalarProperty Name="Area" ColumnName="Area" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_action">
+            <EntityTypeMapping TypeName="dapper_testModel.sys_action">
+              <MappingFragment StoreEntitySet="sys_action">
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="actionname" ColumnName="actionname" />
+                <ScalarProperty Name="actioncode" ColumnName="actioncode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_role">
+            <EntityTypeMapping TypeName="dapper_testModel.sys_role">
+              <MappingFragment StoreEntitySet="sys_role">
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="rowname" ColumnName="rowname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rel_menuactions">
+            <EntityTypeMapping TypeName="dapper_testModel.rel_menuactions">
+              <MappingFragment StoreEntitySet="rel_menuactions">
+                <ScalarProperty Name="isuse" ColumnName="isuse" />
+                <ScalarProperty Name="actionid" ColumnName="actionid" />
+                <ScalarProperty Name="menuid" ColumnName="menuid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -2,7 +2,6 @@
 (function ($) {
     $.extend({
         toJSON: function (arr) {
-            debugger;
             if (arr == null) {
                 return "[]";
             } else {
@@ -478,7 +477,6 @@ var windowHelper = (function () {
                     that.SetPrivilege();
                     break;
             }
-
         });
     };
 

@@ -48,6 +48,15 @@
     <Compile Include="IcustomBll.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="IpersonBll.cs" />
+    <Compile Include="Irel_menuactionsBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isys_actionBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Isys_roleBll.cs">
+      <DependentUpon>IBllTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="IT_Bas_ApplyServiceBll.cs">
       <DependentUpon>IBllTemplate.tt</DependentUpon>
     </Compile>

@@ -1,0 +1,142 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<title>用户管理主界面</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="@Url.Content("~/Content/Validate/bvalidator.css")" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/ZTtree/css/zTreeStyle/zTreeStyle.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/skins/black.css")" />
+    @*JqueryUi*@
+    <link rel="stylesheet" href="@Url.Content("~/Content/JqueryUi/cupertino/jquery.ui.all.css")" type="text/css" />
+    @*jqGrid样式*@
+    <link href="@Url.Content("~/Content/jqGrid/ui.jqgrid.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/jqtransform.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/powerFloat.css")" rel="stylesheet" type="text/css" />
+    @*日历控件css*@
+    <link href="@Url.Content("~/Scripts/My97DatePicker/skin/WdatePicker.css")" rel="stylesheet" type="text/css" />
+    @*基础JS库*@
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.blockUI.js")"></script>
+    @*JqueryUi*@
+    <script src="@Url.Content("~/Scripts/JqueryUi/jquery-ui-1.9.1.custom.js")" type="text/javascript"></script>
+    @*滚动条*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jScroll/jquery.nicescroll.js")"></script>
+    @*日历控件Js*@
+    <script src="@Url.Content("~/Scripts/My97DatePicker/WdatePicker.js")" type="text/javascript"></script>
+    @*Grid*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jqGrid2/i18n/grid.locale-cn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jqGrid2/jquery.jqGrid.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/artDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/iframeTools.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/jquery-powerFloat-min.js")"></script>
+    @*左侧树JS*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ZTtree/jquery.ztree.core-3.4.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ZTtree/jquery.ztree.excheck-3.4.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ZTtree/jquery.ztree.exedit-3.4.js")"></script>
+    @*数据验证*@
+    <script src="@Url.Content("~/Scripts/jquery.bvalidator.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/myjs/commoncrud.js")" type="text/javascript"></script>
+</head>
+@*End*@
+<body>
+    <div id="content" style="width: 100%;">
+        @*定义设置查询参数框的地方*@
+        <div>
+            <div id="searchContent" style="margin-bottom: 5px; margin-top: -5px; background-color: RGB(227, 240, 248);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          width: 100%">
+                <table style="width: 100%;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <div id="buttons" style="width: 310px">
+                                <button title="添加" id="add" op="add" style="font-size: 12px;">
+                                    添加
+                                </button>
+                                <button title="删除" id="del" op="delete" style="font-size: 12px;">
+                                    删除
+                                </button>
+                                <button title="修改" id="edit" op="edit" style="font-size: 12px;">
+                                    修改
+                                </button>
+                                <button title="打开/关闭查询" id="searchBtn" onclick="$('.controls[id!=search_wrapper]').slideUp();$('#search_wrapper').slideToggle();"
+                                        style="font-size: 12px; margin-left: 5px;">
+                                    查询
+                                </button>
+
+                            </div>
+                        </td>
+
+
+                    </tr>
+                </table>
+            </div>
+            <div id="search_wrapper" style="display: none; margin-bottom: 3px;">
+                <label onclick="$('#search_wrapper').slideToggle();" title="关闭搜索框" class="slider_close">
+                    [X]
+                </label>
+                <div>
+                    <form id="searchform">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <label style="font-weight: bold; margin-right: 10px;">
+                                        -=按条件检索=-
+                                    </label>
+                                </td>
+                                <td>
+                                    &nbsp;&nbsp;行为代码：
+                                </td>
+                                <td>
+                                    <input id="actioncode" type="text" name="actioncode" data_op="Contains" style="height: 21px;" />
+                                <td>
+                                <td>
+                                    &nbsp;&nbsp;行为名称：
+                                </td>
+                                <td>
+                                    <input id="actionname" type="text" name="actionname" data_op="Contains" style="height: 21px;" />
+                                <td>
+                                <td>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button id="search" type="button" op="search" title="立即查询数据">
+                                        立即查询
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @*列表展示的地方*@
+        <table id="list4"></table>
+        <div id="gridPager"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        //构造crud的对象
+        var mycrud = new crud('@Url.Action("GetData", "Operation")');
+        //初始化jqgrid的样式
+        var gridid = "#list4";
+        //表头
+        var coltitle = ['', '行为代码', '行为名称', '添加时间'];
+        //表体列绑定
+        var cols = [
+                { name: 'id', index: 'id', hidden: true },
+                { name: 'actioncode', index: 'actioncode', width: 90 },
+                { name: 'actionname', index: 'actionname', width: 90 },
+                { name: 'createtime', index: 'createtime', width: 90, formatter: "date" }];
+        //初始化表格的地方
+        mycrud.initTableCol(coltitle, cols);
+        //绑定页面的缩放事件
+        $(window).resize(function () {
+            $(gridid).setGridWidth($(document.body).width());
+        });
+    });
+</script>
+</html>

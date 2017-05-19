@@ -1,4 +1,4 @@
-/*!
+ï»¿/*!
  * jQuery blockUI plugin
  * Version 2.53 (01-NOV-2012)
  * @requires jQuery v1.3 or later
@@ -82,7 +82,7 @@
 		// override these in your code to change the default behavior and style
 		$.blockUI.defaults = {
 			// message displayed when blocking (use null for no message)
-			message:  '<h1>¼ÓÔØÖĞ...</h1>',
+			message:  '<h1>æ•°æ®åŠ è½½ä¸­...</h1>',
 
 			title: null,		// title string; only used when theme == true
 			draggable: true,	// only used when theme == true (requires jquery-ui.js to be loaded)

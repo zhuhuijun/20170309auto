@@ -206,6 +206,9 @@
     <Compile Include="Controllers\CustomManageController.cs" />
     <Compile Include="Controllers\DepartMentInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModulesController.cs" />
+    <Compile Include="Controllers\OperationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1772,6 +1775,7 @@
     <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Scripts\myjs\commoncrud.js" />
+    <Content Include="Scripts\myjs\menucrud.js" />
     <Content Include="Scripts\ReportSreach\ReportSreach.js" />
     <Content Include="Scripts\ReportSreach\SpaceJs.js" />
     <Content Include="Scripts\TreeHepler.js" />
@@ -1843,6 +1847,16 @@
     <Content Include="Views\DepartMentInfo\Index.cshtml" />
     <Content Include="Views\Users\Add.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Operation\Index.cshtml" />
+    <Content Include="Views\Operation\Add.cshtml" />
+    <Content Include="Views\Operation\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Add.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Modules\Index.cshtml" />
+    <Content Include="Views\Modules\Edit.cshtml" />
+    <Content Include="Views\Modules\Add.cshtml" />
+    <Content Include="Views\Modules\GetActionTree.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\System.Linq.Dynamic\System.Linq.Dynamic.csproj">

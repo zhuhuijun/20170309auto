@@ -171,5 +171,8 @@ namespace zzbj.models
         public virtual DbSet<V_UserDeptRole> V_UserDeptRole { get; set; }
         public virtual DbSet<V_UserRightsView> V_UserRightsView { get; set; }
         public virtual DbSet<V_WaterSectionInfo> V_WaterSectionInfo { get; set; }
+        public virtual DbSet<sys_action> sys_action { get; set; }
+        public virtual DbSet<sys_role> sys_role { get; set; }
+        public virtual DbSet<rel_menuactions> rel_menuactions { get; set; }
     }
 }

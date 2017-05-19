@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model zzbj.models.sys_role
+<div>
+    <form id="formui">
+        @Html.HiddenFor(m=>m.id)
+        <div class="aboxmanageform">
+            <fieldset>
+                <legend style="background: url(/Content/css/images/legendimg.jpg) no-repeat;">
+                    角色基本信息
+                </legend>
+                <table width="100%">
+                    <tr>
+                        <td class="item_title">
+                            角色名称：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.rowname, new Dictionary<string, object>() {{"data-bvalidator", "required"}})
+                        </td>
+                        <td class="item_title">
+                            创建日期：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.createtime, new { @class = "Wdate", onfocus = "WdatePicker({dateFmt:'yyyy/MM/d HH:mm:ss',isShowClear:false,readOnly:true})", style = " width:180px" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="item_title">
+                            角色描述：
+                        </td>
+                        <td colspan="3">
+                            @Html.TextAreaFor(model => model.remarks, new Dictionary<string, object>() {{"data-bvalidator", "required"}})
+                        </td>
+                    </tr>
+                    <tr>
+
+
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </form>
+</div>

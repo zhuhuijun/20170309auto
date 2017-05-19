@@ -18,10 +18,10 @@ namespace zzbj.uis.Controllers
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="userbll"></param>
-        public UsersController(IT_Sys_UsersBll userbll)
+        /// <param name="onebll"></param>
+        public UsersController(IT_Sys_UsersBll onebll)
         {
-            _bll = userbll;
+            _bll = onebll;
         }
         // GET: Users
         public ActionResult Index()
@@ -47,8 +47,18 @@ namespace zzbj.uis.Controllers
             }
             int records = SysDataHelper<T_Sys_Users>.ResultDataCount_New(parasD);
             int total = (int)Math.Ceiling((float)records / (float)rowsint);
-            var usersList = SysDataHelper<T_Sys_Users>.FindDataByPageFilter(parasD,
-                string.IsNullOrEmpty(setting.sortColumn) ? "UserId" : setting.sortColumn + " " + setting.sortOrder, pageIndex, rowsint).ToList();
+            List<T_Sys_Users> usersList = null;
+            try
+            {
+                usersList = SysDataHelper<T_Sys_Users>.FindDataByPageFilter(parasD,
+                 string.IsNullOrEmpty(setting.sortColumn) ? "UserId" : setting.sortColumn + " " + setting.sortOrder, pageIndex, rowsint).ToList();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
             var jsonData = new
             {
                 total = total,
@@ -72,7 +82,7 @@ namespace zzbj.uis.Controllers
                 }
                 ).ToArray()
             };
-            return Json(jsonData);
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
         }
         /// <summary>
         /// 添加用户的界面
@@ -95,6 +105,7 @@ namespace zzbj.uis.Controllers
             one.UserId = Guid.NewGuid();
             one.PassWord = MD5Helper.EncryptString(one.PassWord);
             one.CreateDate = DateTime.Now;
+            one.IsStatus = 0;
             bool add = _bll.Insert(one);
             CRUDModel cm = CRUDModelHelper.GetRes(CRUD.ADD, add);
             return Json(cm, JsonRequestBehavior.AllowGet);
@@ -130,7 +141,6 @@ namespace zzbj.uis.Controllers
         public JsonResult Delete(string id)
         {
             Guid idg = Guid.Parse(id);
-            var uu = SysDataHelper<T_Sys_Users>.FindSingleData(idg);
             T_Sys_Users one = _bll.GetData(g => g.UserId == idg).FirstOrDefault();
             bool add = _bll.Delete(one);
             CRUDModel cm = CRUDModelHelper.GetRes(CRUD.DELETE, add);
