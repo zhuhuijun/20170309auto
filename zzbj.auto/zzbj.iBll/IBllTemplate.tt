@@ -52,7 +52,7 @@ namespace zzbj.ibll
 	/// <summary>
 	/// I<#=tableName#>Bll
 	/// </summary>	
-	public interface  I<#=tableName#>Bll:IDependency<<#=tableName#>>
+	public partial interface  I<#=tableName#>Bll:IDependency<<#=tableName#>>
     {
 
 

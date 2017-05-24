@@ -154,6 +154,7 @@
         <EntityTypeShape EntityType="dapper_testModel.sys_action" Width="1.5" PointX="37.375" PointY="20.75" />
         <EntityTypeShape EntityType="dapper_testModel.sys_role" Width="1.5" PointX="37.375" PointY="23.75" />
         <EntityTypeShape EntityType="dapper_testModel.rel_menuactions" Width="1.5" PointX="37.375" PointY="26.75" />
+        <EntityTypeShape EntityType="dapper_testModel.rel_rolemenus" Width="1.5" PointX="37.375" PointY="29.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

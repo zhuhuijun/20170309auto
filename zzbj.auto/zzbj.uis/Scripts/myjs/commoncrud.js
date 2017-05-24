@@ -181,7 +181,8 @@ var windowHelper = (function () {
         Edit: 'Edit',
         AddUI: 'Add',
         Add: 'Add',
-        DeleteUrl: 'Delete'
+        DeleteUrl: 'Delete',
+        RoleMenuUrl: 'SetPrivilege'
     };
     /**
      * 
@@ -219,6 +220,11 @@ var windowHelper = (function () {
         $("#edit").button({
             icons: {
                 primary: "ui-icon-alert"
+            }
+        });
+        $("#setprivilege").button({
+            icons: {
+                primary: "ui-icon-user"
             }
         });
         $("#search").button({
@@ -268,6 +274,8 @@ var windowHelper = (function () {
         this.Add = urlbase + OptionObj["Add"];
         this.DeleteUrl = urlbase + OptionObj["DeleteUrl"];
         this.CurRow = null;
+        this.UrlBase = urlbase;
+        this.RoleMenuUrl = urlbase + OptionObj.RoleMenuUrl;
         //初始化样式
     };
     CRUD.fn = CRUD.prototype;
@@ -382,19 +390,16 @@ var windowHelper = (function () {
         var priid = that.options.PrimaryId;
         if (that.CurRow) {
             var primaryid = this.CurRow[priid];
-            var index = layer.open({
-                type: 2,
+            art.dialog.open(that.RoleMenuUrl + "/" + primaryid, {
                 id: 'myp',
                 title: '分配权限行为窗口',
-                shadeClose: true,
-                shade: 0.3,
-                area: ['400px', '500px'],
-                scrollbar: false,
-                content: '../RoleinfoManager/SetPrivilege/' + primaryid, //iframe的url
-                btn: ['保存', '取消'],
-                yes: function (index, layero) {
-                    var frameid = 'layui-layer-iframe' + index;
-                    var tt = document.getElementById(frameid).contentWindow;
+                min: false,
+                max: false,
+                height: 500,
+                width: 500,
+                lock: true,
+                ok: function () {
+                    var tt = this.iframe.contentWindow;;
                     if (tt != null) {
                         var paramethod = new tt.getParamater();
                         var menus = paramethod.getmenus();
@@ -409,11 +414,11 @@ var windowHelper = (function () {
                                 var yh = menus[j];
                                 menuids += yh.id + ",";
                             }
-                            var saveur = "../RoleinfoManager/SetPrivilege";
+                            var saveur = that.RoleMenuUrl;
                             $.post(saveur, { roleid: roleid, menuids: menuids }, function (datacall) {
                                 msgHelper.msgcall(datacall);
                             });
-                            layer.close(index);
+                            art.dialog.list['myp'].close();
                         }
 
                     }

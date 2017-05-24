@@ -14,13 +14,17 @@ namespace zzbj.uis.Controllers
     public class RoleController : Controller
     {
         readonly Isys_roleBll _bll;
+        private readonly Irel_rolemenusBll _rolemenu;
+
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="onebll"></param>
-        public RoleController(Isys_roleBll onebll)
+        /// <param name="rolemenu"></param>
+        public RoleController(Isys_roleBll onebll, Irel_rolemenusBll rolemenu)
         {
             _bll = onebll;
+            this._rolemenu = rolemenu;
         }
         // GET: Users
         public ActionResult Index()
@@ -63,7 +67,7 @@ namespace zzbj.uis.Controllers
         /// <returns></returns>
         public ActionResult Add()
         {
-            sys_role one = new sys_role {createtime = DateTime.Now};
+            sys_role one = new sys_role { createtime = DateTime.Now };
             return View(one);
         }
         /// <summary>
@@ -113,6 +117,24 @@ namespace zzbj.uis.Controllers
             bool add = _bll.Delete(uu);
             CRUDModel cm = CRUDModelHelper.GetRes(CRUD.DELETE, add);
             return Json(cm, JsonRequestBehavior.AllowGet);
+        }
+        /// <summary>
+        /// 创建角色分配菜单视图的界面
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult SetPrivilege(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index", "Role");
+            }
+            else
+            {
+                ViewBag.roleid = id;
+                ViewBag.TreeDatas = _rolemenu.GetZTreeDatas(id);
+                return View();
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ namespace zzbj.iBll
         /// </summary>
         /// <param name="propertyExpr">查询条件</param>
         /// <returns></returns>
-        IList<T> GetData(Expression<Func<T, bool>> propertyExpr);
+        IList<T> GetData(Expression<Func<T, bool>> propertyExpr=null);
         /// <summary>2.根据条件查询，返回数据
         /// </summary>
         /// <param name="queryParas">查询条件</param>

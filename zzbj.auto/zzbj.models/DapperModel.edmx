@@ -14,6 +14,15 @@
           <Property Name="actionid" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="isuse" Type="bit" />
         </EntityType>
+        <EntityType Name="rel_rolemenus">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="menuid" />
+          </Key>
+          <Property Name="roleid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="menuid" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="createdate" Type="datetime" />
+        </EntityType>
         <EntityType Name="sys_action">
           <Key>
             <PropertyRef Name="id" />
@@ -2696,6 +2705,7 @@
         </EntityType>
         <EntityContainer Name="dapper_testModelStoreContainer">
           <EntitySet Name="rel_menuactions" EntityType="Self.rel_menuactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rel_rolemenus" EntityType="Self.rel_rolemenus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sys_action" EntityType="Self.sys_action" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sys_role" EntityType="Self.sys_role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Bas_ApplyService" EntityType="Self.T_Bas_ApplyService" Schema="dbo" store:Type="Tables" />
@@ -4096,6 +4106,7 @@
           <EntitySet Name="sys_action" EntityType="dapper_testModel.sys_action" />
           <EntitySet Name="sys_role" EntityType="dapper_testModel.sys_role" />
           <EntitySet Name="rel_menuactions" EntityType="dapper_testModel.rel_menuactions" />
+          <EntitySet Name="rel_rolemenus" EntityType="dapper_testModel.rel_rolemenus" />
         </EntityContainer>
         <EntityType Name="T_Bas_ApplyService">
           <Key>
@@ -6667,6 +6678,15 @@
           <Property Name="menuid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="actionid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="isuse" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="rel_rolemenus">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="menuid" />
+          </Key>
+          <Property Name="roleid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="menuid" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="createdate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -9287,6 +9307,15 @@
                 <ScalarProperty Name="isuse" ColumnName="isuse" />
                 <ScalarProperty Name="actionid" ColumnName="actionid" />
                 <ScalarProperty Name="menuid" ColumnName="menuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rel_rolemenus">
+            <EntityTypeMapping TypeName="dapper_testModel.rel_rolemenus">
+              <MappingFragment StoreEntitySet="rel_rolemenus">
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="menuid" ColumnName="menuid" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

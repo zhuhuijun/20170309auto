@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using zzbj.commons
+@model zzbj.models.T_Bas_Module
+<div>
+    <form id="formui">
+        <div class="aboxmanageform">
+            <fieldset>
+                <legend style="background: url(/Content/css/images/legendimg.jpg) no-repeat;">
+                    菜单基本信息
+                </legend>
+                <table width="100%">
+                    <tr>
+                        <td class="item_title">
+                            模块名称：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.MouduleName, new Dictionary<string, object>() { { "data-bvalidator", "required" } })
+                        </td>
+                        <td class="item_title">
+                            Url路径：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.MenuUrl, new Dictionary<string, object>() { { "data-bvalidator", "required" } })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            应用程序：
+                        </td>
+                        <td>
+                            @Html.DropDownList("ApplicationID", (SelectList)ViewBag.applicationList, new { @style = "width:105px" })
+                        </td>
+                        <td class="item_title">
+                            所属级别：
+                        </td>
+                        <td>
+                            @Html.DropDownList("ParentID", (SelectList)ViewBag.moduleList, "父级模块", new { @style = "width:105px", @onchange = "Change()" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            是否可用：
+                        </td>
+                        <td>
+                            @foreach (var sUse in ViewData["IsUse"] as IList<PublicCommon>)
+                            {
+                                @Html.RadioButtonFor(model => model.IsUse, sUse.Value, sUse.isChecked)@sUse.ShowName
+                                @Html.Label(sUse.Value, "  ");
+                            }
+                        </td>
+                        <td class="item_title">
+                            是否含功能区：
+                        </td>
+                        <td>
+                            @foreach (var sFuntion in ViewData["IsFuntion"] as IList<PublicCommon>)
+                            {
+                                @Html.RadioButtonFor(model => model.IsFuntion, sFuntion.Value, sFuntion.isChecked)@sFuntion.ShowName
+                                @Html.Label(sFuntion.Value, "  ");
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            排序编号：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.OrderID, new Dictionary<string, object>() { { "data-bvalidator", "number,required" } })
+                        </td>
+                        <td class="item_title">
+                            创建日期：
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.CreateDate, new { @class = "Wdate", onfocus = "WdatePicker({dateFmt:'yyyy/MM/d HH:mm:ss',isShowClear:false,readOnly:true})", style = " width:180px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            图片路径：
+                        </td>
+                        <td colspan="3">
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div id="fileQueue" runat="server">
+                                                @if (Model.IcoPath != null)
+                                                {
+                                                    <img id="IconImag" height="60" width="60" src='@Url.Content("/Content/ModulesImages/" + @Model.IcoPath)' alt="" />
+                                                }
+                                            </div>
+                                        </td>
+                                        <td style="width: 200px">
+                                            <input type="file" name="uploadify" id="uploadify" />
+                                        </td>
+                                    </tr>
+                                    <input type="hidden" name="iconpath" value="@Model.IcoPath" id="iconpath" />
+                                    <input type="hidden" name="code" id="code" value="1" />
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item_title">
+                            <div id="typename">
+                                模块类型：
+                            </div>
+                        </td>
+                        <td>
+                            <div id="typevalue">@Html.DropDownList("MouduleType", (SelectList)ViewBag.moduleTypeList, new { @style = "width:105px" })</div>
+                        </td>
+                        <td class="item_title"></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </fieldset>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,122 @@
+﻿@using zzbj.models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>设置菜单的按钮</title>
+    <style type="text/css">
+        .checkboxver {
+            _vertical-align: -1px;
+            vertical-align: -2px;
+            font-size: 12px;
+            font-family: tahoma;
+            margin-top: -2px;
+            margin-bottom: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .checkboxverLA {
+            vertical-align: middle;
+            font: 12px/1.231 Arial, Times New Roman, Verdana;
+            font-size: 12px;
+            font-family: tahoma;
+            margin-bottom: 3px;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-top: 10px;">
+        @{
+            foreach (sys_action act in ViewBag.Actions)
+            {
+                string myid = ViewBag.moduleid + act.id;
+                <div style="margin-left: 10px; height: 20px;">
+                    <input type="checkbox" id="@myid" class="checkboxver" value="@act.id">
+                    <label class="checkboxverLA">@act.actionname</label>
+                </div>
+                <hr />
+            }
+        }
+    </div>
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/skins/black.css")" />
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/artDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/js/iframeTools.js")"></script>
+    <script type="text/javascript">
+        $(function() {
+            //绑定已经勾选的菜单
+            @{
+                List<rel_menuactions> menuactionses = (List<rel_menuactions>)ViewBag.HaveMenu;
+                foreach (var mm in menuactionses)
+                {
+                    string myid = mm.menuid + mm.actionid;
+                    @Html.Raw("$('#"+myid+"').attr('checked','checked');");
+                }}
+        });
+        var msgHelper = (function () {
+            function msgHelper() { };
+            //使用弹窗展示的方法
+            msgHelper.msgcall = function (data) {
+                switch (data.status) {
+                    case "11-001":
+                        msgHelper.msgcallImg(data.msg, "succeed");
+                        break;
+                    case "11-002":
+                    case "11-003":
+                    case "11-004":
+                        msgHelper.msgcallImg(data.msg, "error");
+                        break;
+                }
+            };
+            msgHelper.msgcallImg = function (msg, icon) {
+                var alertdialog = art.dialog({
+                    icon: icon,
+                    min: false,
+                    max: false,
+                    title: "提示"
+                });
+                alertdialog.content(msg);
+                msgHelper.AutoCloseArt(alertdialog);
+            };
+            msgHelper.AutoCloseArt = function (art) {
+                var timeoutId = setInterval(function () {
+                    art.close();
+                    clearInterval(timeoutId);
+                }, 2500);
+            }
+            //未选中数据行
+            msgHelper.emptySelect = function () {
+                msgHelper.msgcallImg("请先选择一条数据记录,然后再进行操作!", "warning");
+            };
+            return msgHelper;
+        })();
+        window.getActionIds = function () {
+            var checks = $("input[type='checkbox']:checked");
+            if (checks.length < 1) {
+                msgHelper.msgcallImg('尚未勾选相应的操作行为', 'warning');
+                return [];
+            } else {
+                var actids = [];
+                for (var t = 0; t < checks.length; t++) {
+                    var tmp = checks[t];
+                    actids.push($(tmp).val());
+                }
+                return actids;
+            }
+
+        };
+    </script>
+</body>
+</html>

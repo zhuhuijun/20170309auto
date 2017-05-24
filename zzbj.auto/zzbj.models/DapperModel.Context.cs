@@ -174,5 +174,6 @@ namespace zzbj.models
         public virtual DbSet<sys_action> sys_action { get; set; }
         public virtual DbSet<sys_role> sys_role { get; set; }
         public virtual DbSet<rel_menuactions> rel_menuactions { get; set; }
+        public virtual DbSet<rel_rolemenus> rel_rolemenus { get; set; }
     }
 }

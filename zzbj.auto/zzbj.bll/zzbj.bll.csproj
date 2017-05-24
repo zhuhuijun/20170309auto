@@ -65,10 +65,14 @@
     </Compile>
     <Compile Include="customBll.cs" />
     <Compile Include="extend\rel_menuactionsBll_extend.cs" />
+    <Compile Include="extend\rel_rolemenusBll_extend.cs" />
     <Compile Include="personBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicMethod.cs" />
     <Compile Include="rel_menuactionsBll.cs">
+      <DependentUpon>BllTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rel_rolemenusBll.cs">
       <DependentUpon>BllTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="SysDataHelper.cs" />
