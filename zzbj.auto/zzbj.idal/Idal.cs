@@ -15,6 +15,13 @@ namespace zzbj.idal
         bool Update(TEntity entity);
         bool Delete(TEntity entity);
         /// <summary>
+        /// 修改指定的字段
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="fileds"></param>
+        /// <returns></returns>
+        bool UpdateSubFields(TEntity entity, List<string> fileds);
+        /// <summary>
         /// 获得记录
         /// </summary>
         /// <param name="keyValues"></param>

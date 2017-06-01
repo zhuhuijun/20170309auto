@@ -23,7 +23,7 @@ namespace zzbj.repository
         /// <returns></returns>
         public dapper_testEntities GetDb()
         {
-           return _dal.GetDb();
+            return _dal.GetDb();
         }
 
         public bool Insert(T entity)
@@ -34,6 +34,16 @@ namespace zzbj.repository
         public bool Update(T entity)
         {
             return _dal.Update(entity);
+        }
+        /// <summary>
+        /// 修改指定字段
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="fileds"></param>
+        /// <returns></returns>
+        public bool UpdateSubFields(T entity, List<string> fileds)
+        {
+            return _dal.UpdateSubFields(entity, fileds);
         }
 
         public bool Delete(T entity)

@@ -29,6 +29,11 @@ namespace zzbj.bll
             return _repository.Update(c);
         }
 
+        public bool UpdateSubFields(custom entity, List<string> fileds)
+        {
+            return _repository.UpdateSubFields(entity, fileds);
+        }
+
         public bool Delete(custom c)
         {
            return _repository.Delete(c);

@@ -15,6 +15,13 @@ namespace zzbj.ibll
         /// <param name="roleid"></param>
         /// <returns></returns>
         List<ZtreeMenuModel> GetZTreeDatas(string roleid);
+        /// <summary>
+        /// 保存角色和菜单的关联数据
+        /// </summary>
+        /// <param name="roleid">角色id</param>
+        /// <param name="menuids">菜单id</param>
+        /// <returns></returns>
+        bool SaveRoleMenu(string roleid, string menuids);
     }
 
 }

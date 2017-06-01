@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zzbj.models;
 
 namespace zzbj.ibll
 {
@@ -18,5 +19,11 @@ namespace zzbj.ibll
         /// <param name="actionids"></param>
         /// <returns></returns>
         bool SaveMenuAction(string menuid, List<string> actionids);
+        /// <summary>
+        /// 根据角色获得菜单
+        /// </summary>
+        /// <param name="roleid"></param>
+        /// <returns></returns>
+        List<rel_rolemenus> GetControllerAndActions(string roleid);
     }
 }

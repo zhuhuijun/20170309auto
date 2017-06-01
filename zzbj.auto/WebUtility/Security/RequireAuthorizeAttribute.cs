@@ -44,7 +44,7 @@ namespace WebUtility.Security
             if (curuser == null)
             {
                 FormsAuthentication.SignOut();
-                filterContext.HttpContext.Response.Redirect("~/LoginManager/Login", true);
+                filterContext.HttpContext.Response.Redirect("~/Admin/Login", true);
             }
             else
             {
@@ -59,7 +59,7 @@ namespace WebUtility.Security
                     if (string.IsNullOrEmpty(UserLoginTicket))
                     {
                         //用户的Session, Cookie都过期，需要重新登录
-                        filterContext.HttpContext.Response.Redirect("~/LoginManager/Login", false);
+                        filterContext.HttpContext.Response.Redirect("~/Admin/Login", false);
                     }
                     else
                     {
@@ -79,7 +79,7 @@ namespace WebUtility.Security
 
                     if (!isAnonymous)
                         //未验证（登录）的用户, 而且是非匿名访问，则转向登录页面
-                        filterContext.HttpContext.Response.Redirect("~/LoginManager/Login", true);
+                        filterContext.HttpContext.Response.Redirect("~/Admin/Login", true);
                 }
             }
 

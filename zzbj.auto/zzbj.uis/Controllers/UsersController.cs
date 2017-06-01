@@ -92,6 +92,8 @@ namespace zzbj.uis.Controllers
         {
             T_Sys_Users user = new T_Sys_Users();
             user.CreateDate = DateTime.Now;
+            //角色的设置界面
+            ViewBag.roles = new SelectList(SysDataHelper<sys_role>.GetData(), "id", "rowname");
             return View(user);
         }
         /// <summary>
@@ -106,6 +108,8 @@ namespace zzbj.uis.Controllers
             one.PassWord = MD5Helper.EncryptString(one.PassWord);
             one.CreateDate = DateTime.Now;
             one.IsStatus = 0;
+            one.Sex = 1;
+            one.ExamineStep = 2;
             bool add = _bll.Insert(one);
             CRUDModel cm = CRUDModelHelper.GetRes(CRUD.ADD, add);
             return Json(cm, JsonRequestBehavior.AllowGet);
@@ -118,6 +122,8 @@ namespace zzbj.uis.Controllers
         public ActionResult Edit(string id)
         {
             T_Sys_Users one = _bll.FindSingleData(Guid.Parse(id));
+            //角色的设置界面
+            ViewBag.roles = new SelectList(SysDataHelper<sys_role>.GetData(), "id", "rowname");
             return View(one);
         }
         /// <summary>
@@ -128,7 +134,10 @@ namespace zzbj.uis.Controllers
         [HttpPost]
         public JsonResult Edit(T_Sys_Users one)
         {
-            bool edit = _bll.Update(one);
+            bool edit = _bll.UpdateSubFields(one, new List<string>()
+            {
+                "UserName", "RealName", "Tel", "Email", "roleid", "CreateDate"
+            });
             CRUDModel cm = CRUDModelHelper.GetRes(CRUD.EDIT, edit);
             return Json(cm);
         }

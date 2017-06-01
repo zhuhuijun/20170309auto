@@ -395,8 +395,6 @@ var windowHelper = (function () {
                 title: '分配权限行为窗口',
                 min: false,
                 max: false,
-                height: 500,
-                width: 500,
                 lock: true,
                 ok: function () {
                     var tt = this.iframe.contentWindow;;

@@ -12,6 +12,13 @@ namespace zzbj.iBll
     {
         bool Insert(T entity);
         bool Update(T entity);
+        /// <summary>
+        /// 修改指定的字段
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="fileds"></param>
+        /// <returns></returns>
+        bool UpdateSubFields(T entity, List<string> fileds);
         bool Delete(T entity);
         /// <summary>
         /// 获得记录

@@ -209,6 +209,7 @@
     <Compile Include="Controllers\ModulesController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SysCommController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,6 +294,7 @@
     <Content Include="Content\css\images\login_top_bg.png" />
     <Content Include="Content\css\images\login_user.png" />
     <Content Include="Content\css\images\more_btn.png" />
+    <Content Include="Content\css\images\noacc.png" />
     <Content Include="Content\css\images\number.png" />
     <Content Include="Content\css\images\OK.png" />
     <Content Include="Content\css\images\portal_all_gif.gif" />
@@ -1863,6 +1865,7 @@
     <Content Include="Views\Modules\Add.cshtml" />
     <Content Include="Views\Modules\GetActionTree.cshtml" />
     <Content Include="Views\Role\SetPrivilege.cshtml" />
+    <Content Include="Views\SysComm\UnAuthorized.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\System.Linq.Dynamic\System.Linq.Dynamic.csproj">

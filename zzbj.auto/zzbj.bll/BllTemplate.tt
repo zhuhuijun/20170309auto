@@ -73,7 +73,16 @@ namespace zzbj.bll
         {
            return  _repository.Update(p);
         }
-
+        /// <summary>
+        /// 修改指定的字段
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="fileds"></param>
+        /// <returns></returns>
+		public bool UpdateSubFields(<#=tableName#> entity, List<string> fileds)
+	    {
+	        return _repository.UpdateSubFields(entity,fileds);
+	    }
         public bool Delete(<#=tableName#> p)
         {
            return _repository.Delete(p);

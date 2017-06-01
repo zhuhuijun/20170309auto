@@ -49,9 +49,13 @@
                         <td>
                             @Html.TextBoxFor(model => model.CreateDate, new { @class = "Wdate", onfocus = "WdatePicker({dateFmt:'yyyy/MM/d HH:mm:ss',isShowClear:false,readOnly:true})", style = " width:180px" })
                         </td>
-                        <td class="item_title"></td>
-                        @* @Html.HiddenFor(model => model.UserRoleId)*@
-                        <td></td>
+                        <td class="item_title">
+                            用户角色:
+                        </td>
+
+                        <td>
+                            @Html.DropDownListFor(model => model.roleid, (SelectList)ViewBag.roles,new {style="width:185px;"})
+                        </td>
                     </tr>
                 </table>
             </fieldset>

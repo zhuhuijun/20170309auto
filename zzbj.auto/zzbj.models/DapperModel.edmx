@@ -1277,6 +1277,7 @@
           <Property Name="IsExamine" Type="int" />
           <Property Name="ExamineStep" Type="int" />
           <Property Name="CreateDate" Type="datetime" />
+          <Property Name="roleid" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“DB_ZhouShan_DataBase.dbo.V_AQIDaySinglePoint”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
@@ -4043,7 +4044,6 @@
           <EntitySet Name="T_Sys_RoleOperation" EntityType="dapper_testModel.T_Sys_RoleOperation" />
           <EntitySet Name="T_Sys_UserDept" EntityType="dapper_testModel.T_Sys_UserDept" />
           <EntitySet Name="T_Sys_UserRole" EntityType="dapper_testModel.T_Sys_UserRole" />
-          <EntitySet Name="T_Sys_Users" EntityType="dapper_testModel.T_Sys_Users" />
           <EntitySet Name="T_Cod_NoiseDayAndNightInfo" EntityType="dapper_testModel.T_Cod_NoiseDayAndNightInfo" />
           <EntitySet Name="V_AQIDaySinglePoint" EntityType="dapper_testModel.V_AQIDaySinglePoint" />
           <EntitySet Name="V_AQIReportData" EntityType="dapper_testModel.V_AQIReportData" />
@@ -4107,6 +4107,7 @@
           <EntitySet Name="sys_role" EntityType="dapper_testModel.sys_role" />
           <EntitySet Name="rel_menuactions" EntityType="dapper_testModel.rel_menuactions" />
           <EntitySet Name="rel_rolemenus" EntityType="dapper_testModel.rel_rolemenus" />
+          <EntitySet Name="T_Sys_Users" EntityType="dapper_testModel.T_Sys_Users" />
         </EntityContainer>
         <EntityType Name="T_Bas_ApplyService">
           <Key>
@@ -5316,23 +5317,6 @@
           <Property Name="IsStatus" Type="Int32" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
           <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="T_Sys_Users">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="UserId" Type="Guid" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="IsStatus" Type="Int32" />
-          <Property Name="Sex" Type="Int32" />
-          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="IsExamine" Type="Int32" />
-          <Property Name="ExamineStep" Type="Int32" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="T_Cod_NoiseDayAndNightInfo">
           <Key>
@@ -6688,6 +6672,24 @@
           <Property Name="menuid" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="createdate" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="T_Sys_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsStatus" Type="Int32" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsExamine" Type="Int32" />
+          <Property Name="ExamineStep" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="roleid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7986,24 +7988,6 @@
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_Sys_Users">
-            <EntityTypeMapping TypeName="dapper_testModel.T_Sys_Users">
-              <MappingFragment StoreEntitySet="T_Sys_Users">
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="ExamineStep" ColumnName="ExamineStep" />
-                <ScalarProperty Name="IsExamine" ColumnName="IsExamine" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="IsStatus" ColumnName="IsStatus" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="RealName" ColumnName="RealName" />
-                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -9316,6 +9300,25 @@
                 <ScalarProperty Name="createdate" ColumnName="createdate" />
                 <ScalarProperty Name="menuid" ColumnName="menuid" />
                 <ScalarProperty Name="roleid" ColumnName="roleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Sys_Users">
+            <EntityTypeMapping TypeName="dapper_testModel.T_Sys_Users">
+              <MappingFragment StoreEntitySet="T_Sys_Users">
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ExamineStep" ColumnName="ExamineStep" />
+                <ScalarProperty Name="IsExamine" ColumnName="IsExamine" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="IsStatus" ColumnName="IsStatus" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

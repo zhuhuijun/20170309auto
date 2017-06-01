@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebUtility;
 using zzbj.bll;
 using zzbj.uis.Models;
 
 namespace zzbj.uis.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : WebControllerBase
     {
         public ActionResult Index()
         {

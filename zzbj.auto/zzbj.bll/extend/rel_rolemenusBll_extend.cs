@@ -53,6 +53,69 @@ namespace zzbj.bll
             return res;
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roleid"></param>
+        /// <param name="menuids"></param>
+        /// <returns></returns>
+        public bool SaveRoleMenu(string roleid, string menuids)
+        {
+            List<rel_rolemenus> datas = null;
+            bool flag = false;
+            menuids = menuids.Remove(menuids.Length - 1, 1);
+            string[] menuarr = menuids.Split(',');
+            if (menuarr.Any())
+            {
+                datas = new List<rel_rolemenus>();
+                for (int i = 0; i < menuarr.Count(); i++)
+                {
+                    rel_rolemenus tmp = new rel_rolemenus()
+                    {
+                        roleid = roleid,
+                        menuid = menuarr[i],
+                        createdate = DateTime.Now
+
+                    };
+                    datas.Add(tmp);
+                }
+                flag = SaveRoleMenu_Db(roleid, datas);
+            }
+            return flag;
+        }
+        /// <summary>
+        /// 数据库保存角色的菜单
+        /// </summary>
+        /// <param name="roleid"></param>
+        /// <param name="datas"></param>
+        /// <returns></returns>
+        private bool SaveRoleMenu_Db(string roleid, List<rel_rolemenus> datas)
+        {
+            dapper_testEntities db = _repository.GetDb();
+            using (var scope = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    string sql = string.Format("delete from rel_rolemenus where roleid='{0}'", roleid);
+                    db.Database.ExecuteSqlCommand(sql);
+                    if (datas != null && datas.Count > 0)
+                    {
+                        foreach (var one in datas)
+                        {
+                            db.Set<rel_rolemenus>().Add(one);
+                        }
+                    }
+                    db.SaveChanges();
+                    scope.Commit();//正常完成就可以提交
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    scope.Rollback();//发生异常就回滚
+                    return false;
+                }
+            }
+        }
+        /// <summary>
         /// 获得顶级的菜单的树形数据
         /// </summary>
         /// <param name="firsts"></param>

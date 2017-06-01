@@ -91,7 +91,6 @@
         <EntityTypeShape EntityType="dapper_testModel.T_Sys_RoleOperation" Width="1.5" PointX="26.75" PointY="3.75" />
         <EntityTypeShape EntityType="dapper_testModel.T_Sys_UserDept" Width="1.5" PointX="26.75" PointY="6.75" />
         <EntityTypeShape EntityType="dapper_testModel.T_Sys_UserRole" Width="1.5" PointX="26.75" PointY="9.75" />
-        <EntityTypeShape EntityType="dapper_testModel.T_Sys_Users" Width="1.5" PointX="26.75" PointY="12.75" />
         <EntityTypeShape EntityType="dapper_testModel.T_Cod_NoiseDayAndNightInfo" Width="1.5" PointX="12.75" PointY="26.75" />
         <EntityTypeShape EntityType="dapper_testModel.V_AQIDaySinglePoint" Width="1.5" PointX="14.75" PointY="26.75" />
         <EntityTypeShape EntityType="dapper_testModel.V_AQIReportData" Width="1.5" PointX="26.75" PointY="16.75" />
@@ -155,6 +154,7 @@
         <EntityTypeShape EntityType="dapper_testModel.sys_role" Width="1.5" PointX="37.375" PointY="23.75" />
         <EntityTypeShape EntityType="dapper_testModel.rel_menuactions" Width="1.5" PointX="37.375" PointY="26.75" />
         <EntityTypeShape EntityType="dapper_testModel.rel_rolemenus" Width="1.5" PointX="37.375" PointY="29.75" />
+        <EntityTypeShape EntityType="dapper_testModel.T_Sys_Users" Width="1.5" PointX="37.375" PointY="32.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

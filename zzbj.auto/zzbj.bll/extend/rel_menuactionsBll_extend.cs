@@ -51,5 +51,17 @@ namespace zzbj.bll
                 }
             }
         }
+        /// <summary>
+        /// 根据角色获得行为
+        /// </summary>
+        /// <param name="roleid"></param>
+        /// <returns></returns>
+        public List<rel_rolemenus> GetControllerAndActions(string roleid)
+        {
+            dapper_testEntities db = _repository.GetDb();
+            string sql = string.Format("SELECT * FROM rel_rolemenus WHERE roleid='{0}' AND menuid  LIKE '%*%' ", roleid);
+            return db.Database.SqlQuery<rel_rolemenus>(sql).ToList();
+        }
+
     }
 }

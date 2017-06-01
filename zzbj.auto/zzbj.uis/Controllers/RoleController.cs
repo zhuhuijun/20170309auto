@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using WebUtility;
+using WebUtility.Security;
 using zzbj.bll;
 using zzbj.ibll;
 using zzbj.models;
@@ -11,7 +13,8 @@ using zzbj.uis.Models;
 
 namespace zzbj.uis.Controllers
 {
-    public class RoleController : Controller
+    [RequireAuthorize]
+    public class RoleController :  WebControllerBase
     {
         readonly Isys_roleBll _bll;
         private readonly Irel_rolemenusBll _rolemenu;
@@ -135,6 +138,27 @@ namespace zzbj.uis.Controllers
                 ViewBag.TreeDatas = _rolemenu.GetZTreeDatas(id);
                 return View();
             }
+        }
+        /// <summary>
+        /// 保存角色的菜单值
+        /// </summary>
+        /// <param name="roleid"></param>
+        /// <param name="menuids"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult SetPrivilege(string roleid, string menuids)
+        {
+            CRUDModel cm = null;
+            if (string.IsNullOrEmpty(roleid) || string.IsNullOrEmpty(menuids))
+            {
+                cm = new CRUDModel();
+            }
+            else
+            {
+                bool flag = _rolemenu.SaveRoleMenu(roleid, menuids);
+                cm = CRUDModelHelper.GetRes(CRUD.ROLEMENU, flag);
+            }
+            return Json(cm, JsonRequestBehavior.DenyGet);
         }
     }
 }

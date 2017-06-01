@@ -17,6 +17,13 @@ namespace zzbj.repository
         dapper_testEntities GetDb();
         bool Insert(Tentity entity);
         bool Update(Tentity entity);
+        /// <summary>
+        /// 修改指定的字段
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="fileds"></param>
+        /// <returns></returns>
+        bool UpdateSubFields(Tentity entity, List<string> fileds);
         bool Delete(Tentity entity);
         /// <summary>
         /// 获得记录

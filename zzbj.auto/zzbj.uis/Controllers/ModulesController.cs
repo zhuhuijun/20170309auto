@@ -75,7 +75,7 @@ namespace zzbj.uis.Controllers
                        "<img src='../Content/ModulesImages/"+ sta.IcoPath+"' width='20' height='20' alt='' />",
                        sta.MenuUrl,
                        sta.IsFuntion==0?"有":"无",
-                       sta.CreateDate.ToString("yyyy-MM-dd")
+                       sta.CreateDate.Value.ToString("yyyy-MM-dd")
                     }
                 }
                 ).ToArray()

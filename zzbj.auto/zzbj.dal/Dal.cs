@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -63,6 +64,28 @@ namespace zzbj.dal
             }
             return false;
         }
+        /// <summary>
+        /// 修改指定字段
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="fileds"></param>
+        /// <returns></returns>
+        public bool UpdateSubFields(T entity, List<string> fileds)
+        {
+            if (entity != null && fileds != null)
+            {
+                _mDbContext.Set<T>().Attach(entity);
+                var setEntry = ((IObjectContextAdapter)_mDbContext).ObjectContext.
+                    ObjectStateManager.GetObjectStateEntry(entity);
+                foreach (var t in fileds)
+                {
+                    setEntry.SetModifiedProperty(t);
+                }
+                return _mDbContext.SaveChanges() > 0;
+            }
+            return false;
+        }
+
         /// <summary>
         /// 根据主键获得记录
         /// </summary>

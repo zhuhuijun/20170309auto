@@ -111,7 +111,6 @@ namespace zzbj.models
         public virtual DbSet<T_Sys_RoleOperation> T_Sys_RoleOperation { get; set; }
         public virtual DbSet<T_Sys_UserDept> T_Sys_UserDept { get; set; }
         public virtual DbSet<T_Sys_UserRole> T_Sys_UserRole { get; set; }
-        public virtual DbSet<T_Sys_Users> T_Sys_Users { get; set; }
         public virtual DbSet<T_Cod_NoiseDayAndNightInfo> T_Cod_NoiseDayAndNightInfo { get; set; }
         public virtual DbSet<V_AQIDaySinglePoint> V_AQIDaySinglePoint { get; set; }
         public virtual DbSet<V_AQIReportData> V_AQIReportData { get; set; }
@@ -175,5 +174,6 @@ namespace zzbj.models
         public virtual DbSet<sys_role> sys_role { get; set; }
         public virtual DbSet<rel_menuactions> rel_menuactions { get; set; }
         public virtual DbSet<rel_rolemenus> rel_rolemenus { get; set; }
+        public virtual DbSet<T_Sys_Users> T_Sys_Users { get; set; }
     }
 }
