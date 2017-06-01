@@ -108,7 +108,8 @@ namespace zzbj.uis.Models
                 var firstOrDefault = menus.FirstOrDefault(g => g.MouduleID == moduleid);
                 if (firstOrDefault != null)
                 {
-                    string controllername = firstOrDefault.MenuUrl;
+                    //处理控制器的字符串
+                    string controllername = CtrlControllerName(firstOrDefault.MenuUrl);
                     var sysAction = actions.FirstOrDefault(g => g.id == tmparr[1]);
                     if (sysAction != null)
                     {
@@ -125,7 +126,10 @@ namespace zzbj.uis.Models
                             }
                             else//如果没有就添加
                             {
-                                controllerDic.Add(controllername, action);
+                                if (!string.IsNullOrEmpty(controllername))
+                                {
+                                    controllerDic.Add(controllername, action);
+                                }
                             }
 
                         }
@@ -175,6 +179,30 @@ namespace zzbj.uis.Models
                     break;
             }
             return sb.ToString();
+        }
+        /// <summary>
+        /// 处理控制器的
+        /// </summary>
+        /// <param name="ctrlname"></param>
+        private static string CtrlControllerName(string ctrlname)
+        {
+            string retc = "";
+            if (!string.IsNullOrEmpty(ctrlname) && (ctrlname.ToLower() != "null"))
+            {
+                string[] arr = ctrlname.Split('/');
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i].ToLower() == "index")
+                    {
+                        if (i != 0)
+                        {
+                            retc = arr[i - 1];
+                        }
+                        break;
+                    }
+                }
+            }
+            return retc;
         }
     }
 }
