@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using WebUtility;
+using WebUtility.Security;
 using zzbj.bll;
 using zzbj.commons;
 using zzbj.ibll;
@@ -12,7 +14,8 @@ using zzbj.uis.Models;
 
 namespace zzbj.uis.Controllers
 {
-    public class UsersController : Controller
+    [RequireAuthorize]
+    public class UsersController : WebControllerBase
     {
         readonly IT_Sys_UsersBll _bll;
         /// <summary>

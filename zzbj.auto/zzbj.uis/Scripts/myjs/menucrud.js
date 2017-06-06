@@ -111,26 +111,29 @@ var windowHelper = (function () {
      * @returns {} 
      */
     windowHelper.addUIWindow = function (htmlcontent, para, callback) {
-        art.dialog({
-            okValue: '保存',
-            title: para.AddTitle,
-            content: htmlcontent,
-            min: false,
-            max: false,
-            lock: true,
-            ok: function () {
-                if ($(para.FormId).bValidator().validate()) {
-                    msgHelper.Tip();
-                    callback();
+        if (htmlcontent.indexOf('<!DOCTYPE html>') > 0) {
+            msgHelper.msgcallImg('您无权访问此页面!', 'error');
+        } else {
+            art.dialog({
+                okValue: '保存',
+                title: para.AddTitle,
+                content: htmlcontent,
+                min: false,
+                max: false,
+                lock: true,
+                ok: function () {
+                    if ($(para.FormId).bValidator().validate()) {
+                        msgHelper.Tip();
+                        callback();
+                    } else {
+                        return false;
+                    }
+                },
+                cancel: function () {
+                    this.close();
                 }
-                else {
-                    return false;
-                }
-            },
-            cancel: function () {
-                this.close();
-            }
-        });
+            });
+        }
     };
     /**
      * 修改窗口
@@ -140,26 +143,29 @@ var windowHelper = (function () {
      * @returns {} 
      */
     windowHelper.editUIWindow = function (htmlcontent, para, callback) {
-        art.dialog({
-            okValue: '保存',
-            title: para.AddTitle,
-            content: htmlcontent,
-            min: false,
-            max: false,
-            lock: true,
-            ok: function () {
-                if ($(para.FormId).bValidator().validate()) {
-                    msgHelper.Tip();
-                    callback();
+        if (htmlcontent.indexOf('<!DOCTYPE html>') > 0) {
+            msgHelper.msgcallImg('您无权访问此页面!', 'error');
+        } else {
+            art.dialog({
+                okValue: '保存',
+                title: para.AddTitle,
+                content: htmlcontent,
+                min: false,
+                max: false,
+                lock: true,
+                ok: function () {
+                    if ($(para.FormId).bValidator().validate()) {
+                        msgHelper.Tip();
+                        callback();
+                    } else {
+                        return false;
+                    }
+                },
+                cancel: function () {
+                    this.close();
                 }
-                else {
-                    return false;
-                }
-            },
-            cancel: function () {
-                this.close();
-            }
-        });
+            });
+        }
     };
     /**
      * 菜单和按钮进行关联的窗口
@@ -167,14 +173,14 @@ var windowHelper = (function () {
      * @param {} callback 
      * @returns {} 
      */
-    windowHelper.MenuActionWindow = function (param,callmeth) {
+    windowHelper.MenuActionWindow = function (param, callmeth) {
         art.dialog.open(param.url, {
             title: param.title,
             min: false,
             max: false,
             lock: true,
-            height: 300,
-            width:400,
+            height: 320,
+            width: 430,
             ok: function () {
                 var iframe = this.iframe.contentWindow;
                 var checks = iframe.getActionIds();
@@ -233,7 +239,7 @@ var windowHelper = (function () {
                 primary: "ui-icon-info"
             }
         });
-        $("#del").button({
+        $("#delete").button({
             icons: {
                 primary: "ui-icon-script"
             }
@@ -509,14 +515,14 @@ var windowHelper = (function () {
      */
     CRUD.fn.SetActionTree = function (rowid) {
         var that = this;
-        var callmeth = function(actions) {
+        var callmeth = function (actions) {
             var callmethod = function (datares) {
                 that.CurRow = null;
                 msgHelper.msgcall(datares);
             };
             $.post('../Modules/GetActionTree/', { menuid: rowid, actionids: actions }, callmethod);
         };
-        windowHelper.MenuActionWindow({ url: '../Modules/GetActionTree/' + rowid,title:'设置按钮' }, callmeth);
+        windowHelper.MenuActionWindow({ url: '../Modules/GetActionTree/' + rowid, title: '设置按钮' }, callmeth);
     };
     /**
      * 公布接口

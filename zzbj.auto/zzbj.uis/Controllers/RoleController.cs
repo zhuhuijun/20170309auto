@@ -32,6 +32,8 @@ namespace zzbj.uis.Controllers
         // GET: Users
         public ActionResult Index()
         {
+            string btns = BtnCreate.GetBtn("role");
+            ViewBag.Btns = btns;
             return View();
         }
         /// <summary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using zzbj.commons;
 using zzbj.ibll;
 using zzbj.models;
@@ -62,6 +63,16 @@ namespace zzbj.uis.Controllers
                 return View(user);
             else
                 return Redirect(Url.Action("Index", "Home"));
+        }
+        /// <summary>
+        /// 退出系统
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult LoginOff()
+        {
+            FormsAuthentication.SignOut();
+            Session.RemoveAll();
+            return RedirectToAction("Login", "Admin");
         }
     }
 }

@@ -118,26 +118,31 @@ var windowHelper = (function () {
      * @returns {} 
      */
     windowHelper.addUIWindow = function (htmlcontent, para, callback) {
-        art.dialog({
-            okValue: '保存',
-            title: para.AddTitle,
-            content: htmlcontent,
-            min: false,
-            max: false,
-            lock: true,
-            ok: function () {
-                if ($(para.FormId).bValidator().validate()) {
-                    msgHelper.Tip();
-                    callback();
+        if (htmlcontent.indexOf('<!DOCTYPE html>') > 0) {
+            msgHelper.msgcallImg('您无权访问此页面!', 'error');
+        } else {
+            art.dialog({
+                okValue: '保存',
+                title: para.AddTitle,
+                content: htmlcontent,
+                min: false,
+                max: false,
+                lock: true,
+                ok: function () {
+                    if ($(para.FormId).bValidator().validate()) {
+                        msgHelper.Tip();
+                        callback();
+                    }
+                    else {
+                        return false;
+                    }
+                },
+                cancel: function () {
+                    this.close();
                 }
-                else {
-                    return false;
-                }
-            },
-            cancel: function () {
-                this.close();
-            }
-        });
+            });
+        }
+
     };
     /**
      * 修改窗口
@@ -147,26 +152,29 @@ var windowHelper = (function () {
      * @returns {} 
      */
     windowHelper.editUIWindow = function (htmlcontent, para, callback) {
-        art.dialog({
-            okValue: '保存',
-            title: para.AddTitle,
-            content: htmlcontent,
-            min: false,
-            max: false,
-            lock: true,
-            ok: function () {
-                if ($(para.FormId).bValidator().validate()) {
-                    msgHelper.Tip();
-                    callback();
+        if (htmlcontent.indexOf('<!DOCTYPE html>') > 0) {
+            msgHelper.msgcallImg('您无权访问此页面!', 'error');
+        } else {
+            art.dialog({
+                okValue: '保存',
+                title: para.AddTitle,
+                content: htmlcontent,
+                min: false,
+                max: false,
+                lock: true,
+                ok: function () {
+                    if ($(para.FormId).bValidator().validate()) {
+                        msgHelper.Tip();
+                        callback();
+                    } else {
+                        return false;
+                    }
+                },
+                cancel: function () {
+                    this.close();
                 }
-                else {
-                    return false;
-                }
-            },
-            cancel: function () {
-                this.close();
-            }
-        });
+            });
+        }
     };
     /**========================================*/
     return windowHelper;
@@ -212,7 +220,7 @@ var windowHelper = (function () {
                 primary: "ui-icon-info"
             }
         });
-        $("#del").button({
+        $("#delete").button({
             icons: {
                 primary: "ui-icon-script"
             }
@@ -297,6 +305,7 @@ var windowHelper = (function () {
             type: "GET",
             url: that.AddUI,
             success: function (data) {
+                console.info(data);
                 windowHelper.addUIWindow(data, that.options, function () {
                     $.post(that.Add,
                     $(that.options.FormId).serialize(),
@@ -421,9 +430,7 @@ var windowHelper = (function () {
 
                     }
 
-                }, btn2: function (index, layero) {
-                    layer.close(index);
-                }
+                },cancel:true
             });
             //layer.full(index);
         } else {

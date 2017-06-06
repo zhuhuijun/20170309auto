@@ -215,6 +215,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\ClazzHelper.cs" />
     <Compile Include="Models\GridSettings.cs" />
     <Compile Include="Models\SysInitModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
